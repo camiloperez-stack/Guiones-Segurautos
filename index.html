@@ -30,10 +30,10 @@
     .card-pauta:hover { border-color: #FFD700; box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.3); }
     .card-organico { border-color: rgba(0, 242, 254, 0.35); background: linear-gradient(145deg, rgba(0, 242, 254, 0.05) 0%, rgba(18, 24, 38, 0.9) 100%); }
     .card-organico:hover { border-color: #00F2FE; box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.3); }
-    .drop-zone { min-height: 220px; transition: all 0.2s ease; }
-    .drop-zone.drag-over { background: rgba(255, 255, 255, 0.08); border-color: #3B82F6; }
     .badge-pauta { background: rgba(255, 215, 0, 0.15); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.3); }
     .badge-organico { background: rgba(0, 242, 254, 0.15); color: #00F2FE; border: 1px solid rgba(0, 242, 254, 0.3); }
+    .drop-zone { min-height: 220px; transition: all 0.2s ease; }
+    .drop-zone.drag-over { background: rgba(255, 255, 255, 0.08); border-color: #3B82F6; }
   </style>
 </head>
 <body class="p-4 md:p-8">
@@ -57,6 +57,7 @@
     </div>
   </header>
 
+  <!-- CONTENEDOR PRINCIPAL -->
   <main class="max-w-7xl mx-auto space-y-8">
     
     <!-- BARRA DE BÚSQUEDA Y FILTROS -->
@@ -76,13 +77,183 @@
     <section class="space-y-4">
       <div class="flex items-center justify-between">
         <h2 class="text-xl font-bold flex items-center gap-2 text-white">
-          <i class="fa-solid fa-layer-group text-blue-400"></i> Banco de Guiones Disponible
+          <i class="fa-solid fa-layer-group text-blue-400"></i> Banco de Guiones Disponible (10)
         </h2>
-        <span class="text-xs text-gray-400 hidden sm:inline"><i class="fa-solid fa-hand-pointer text-blue-400"></i> Arrastra las fichas a la sección de planificación</span>
+        <span class="text-xs text-gray-400 hidden sm:inline"><i class="fa-solid fa-hand-pointer text-blue-400"></i> Arrastra las fichas a las sesiones de abajo</span>
       </div>
 
       <div id="mainBank" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 drop-zone p-4 rounded-2xl border-2 border-dashed border-white/10 bg-black/20" ondrop="drop(event, 'mainBank')" ondragover="allowDrop(event)">
-        <!-- RENDERIZADO INICIAL -->
+        
+        <!-- GUION 1 (PAUTA) -->
+        <div id="g1" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-pauta"><i class="fa-solid fa-bolt"></i> PAUTA</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#01</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-yellow-400 transition-colors leading-snug">Haz parte de los que cuidan</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Dato curioso: la mayoría de accidentes en la ciudad los causan personas que no tienen un seguro todo riesgo..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Haz parte de los que cuidan', 'Dato curioso: la mayoría de accidentes en la ciudad los causan personas que no tienen un seguro todo riesgo...', 'g1-text', 'PAUTA')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g1-text" class="hidden">Dato curioso: la mayoría de accidentes en la ciudad los causan personas que no tienen un seguro todo riesgo. Y tiene sentido: quien no invierte en cuidar su carro, por lo general tampoco maneja con el mismo cuidado en la vía. El problema es que la imprudencia es pan de cada día. Ya sea un choque simple o un accidente serio con heridos. En cualquier caso, si usted ha dejado su carro sin seguro así sea por un tiempo corto, la probabilidad de hacer parte de la estadística de los chocados es más alta. Si desea cuidar su bolsillo y hacer parte de los que invierten en su seguridad, cotice dando clic en el enlace con una de nuestras gestoras y encuentre la mejor cobertura al mejor precio.</div>
+        </div>
+
+        <!-- GUION 2 (PAUTA) -->
+        <div id="g2" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-pauta"><i class="fa-solid fa-bolt"></i> PAUTA</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#02</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-yellow-400 transition-colors leading-snug">Tres pasos para ahorrar en tu seguro todo riesgo</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Hay una forma muy sencilla de ahorrar en tu póliza Todo Riesgo sin dejar de cumplir todos los requisitos de endoso..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Tres pasos para ahorrar en tu seguro todo riesgo', 'Hay una forma muy sencilla de ahorrar en tu póliza Todo Riesgo sin dejar de cumplir todos los requisitos...', 'g2-text', 'PAUTA')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g2-text" class="hidden">Hay una forma muy sencilla de ahorrar en tu póliza Todo Riesgo sin dejar de cumplir todos los requisitos de endoso que te exige el banco, y estos son los 3 pasos para lograrlo: Revisa las aseguradoras que cuentan con acuerdos de pago directo para diferir tus cuotas sin pagar intereses adicionales. Revisa cuáles compañías te pueden otorgar una bonificación diferente con los datos de tu cónyuge, pocas personas lo saben Y el paso más importante, el paso 3: No te quedes con una sola opción. En Segurautos comparamos con más de 14 aseguradoras del país al mismo tiempo para encontrarte la tarifa más baja garantizando que la póliza cumpla al 100% con los requerimientos de tu banco. Solicita tu cuadro comparativo dando clic en el enlace, completando la información y hablando con una de nuestras gestoras.</div>
+        </div>
+
+        <!-- GUION 3 (PAUTA) -->
+        <div id="g3" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-pauta"><i class="fa-solid fa-bolt"></i> PAUTA</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#03</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-yellow-400 transition-colors leading-snug">El engaño de los asesores de banco</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Si estás a punto de sacar carro o te van a desembolsar un crédito, ten muchísimo cuidado con esto..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('El engaño de los asesores de banco', 'Si estás a punto de sacar carro o te van a desembolsar un crédito, ten muchísimo cuidado con esto...', 'g3-text', 'PAUTA')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g3-text" class="hidden">Si estás a punto de sacar carro o te van a desembolsar un crédito, ten muchísimo cuidado con esto porque a casi todo el mundo se la aplican. En el concesionario o en el banco muchas veces te dicen que para poder entregarte el carro o desembolsar la plata, tienes que comprar la póliza Todo Riesgo obligatoriamente con la aseguradora que ellos te ofrecen. Y eso es completamente falso. Por norma de la Superintendencia Financiera tú tienes todo el derecho de elegir la aseguradora que a ti te dé la gana, la que mejor precio te dé o la que mejores coberturas tenga, siempre y cuando cumpla los requisitos de endoso del banco. No te dejes presionar ni pagues de más por afán. Antes de firmar nada, cotiza por tu cuenta. Por ejemplo en Segurautos te comparan esa misma póliza con más de 14 aseguradoras al tiempo para ver cuál te sale más barata y que cumpla exactamente lo que te exige el banco. Cotiza primero, da clic en el enlace y recibe tus cotizaciones justas y a tiempo.</div>
+        </div>
+
+        <!-- GUION 4 (PAUTA) -->
+        <div id="g4" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-pauta"><i class="fa-solid fa-bolt"></i> PAUTA</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#04</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-yellow-400 transition-colors leading-snug">Compara antes de renovar</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Si tu póliza Todo Riesgo está a punto de vencerse, no cometas el error que comete la mayoría..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Compara antes de renovar', 'Si tu póliza Todo Riesgo está a punto de vencerse, no cometas el error que comete la mayoría...', 'g4-text', 'PAUTA')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g4-text" class="hidden">Si tu póliza Todo Riesgo está a punto de vencerse, no cometas el error que comete la mayoría: renovar en automático sin revisar. Esos días previos al vencimiento son literalmente la mejor oportunidad que tienes para conseguir un precio mucho más bajo, mejorar coberturas, tener mejor servicio e incluso contar con un doble respaldo para tu carro. La gente por costumbre termina pagando lo mismo o más caro cada año con la misma compañía por no darse el trabajo de comparar. Y es facilísimo: en Segurautos cotizamos tu renovación al mismo tiempo con las mejores aseguradoras del país, más de 14 opciones en total, garantizando que no pierdas tus beneficios y encuentres la tarifa más económica del mercado. Si ya te llegó el correo o la llamada de renovación, no firmes ni pagues todavía. Es el mejor momento para comparar y comprobar que tienes más y mejores opciones. Recibe tu comparativo; da clic en el enlace, completa la información y una de nuestras gestoras te contactará.</div>
+        </div>
+
+        <!-- GUION 5 (PAUTA) -->
+        <div id="g5" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-pauta"><i class="fa-solid fa-bolt"></i> PAUTA</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#05</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-yellow-400 transition-colors leading-snug">Buenas noticias para los camioneros</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Buenas noticias para los camioneros y propietarios de vehículos pesados: el costo de los seguros bajó..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Buenas noticias para los camioneros', 'Buenas noticias para los camioneros y propietarios de vehículos pesados: el costo de los seguros bajó...', 'g5-text', 'PAUTA')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g5-text" class="hidden">Buenas noticias para los camioneros y propietarios de vehículos pesados: el costo de los seguros para transporte pesado bajó y las opciones que tienes a tu disposición en este momento son las mejores del mercado. Si estás pagando un seguro demasiado costoso o se te avecina la renovación, este es el momento exacto para revisar. Cuando cotizas con una de nuestras gestoras en Segurautos, nos encargamos de comparar entre las mejores aseguradoras del país para hacer todo lo posible por mejorar el precio de tu seguro actual, entregándote exactamente las coberturas que necesitas para rodar y circular con total tranquilidad por todo el territorio nacional. No renueves ni asegures a ciegas pagando de más. Da clic en el enlace, conversa directamente con una de nuestras gestoras especializadas y descubre tu mejor opción.</div>
+        </div>
+
+        <!-- GUION 6 (ORGÁNICO) -->
+        <div id="g6" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-organico"><i class="fa-solid fa-video"></i> ORGÁNICO</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#06</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-cyan-400 transition-colors leading-snug">Cúrate en salud</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Si vas manejando, caes en un hueco feo y se te rompe un rin, se te estalla una llanta o se te daña la suspensión..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Cúrate en salud', 'Si vas manejando, caes en un hueco feo y se te rompe un rin, se te estalla una llanta o se te daña la suspensión...', 'g6-text', 'ORGÁNICO')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g6-text" class="hidden">Si vas manejando, caes en un hueco feo y se te rompe un rin, se te estalla una llanta o se te daña la suspensión, no te muevas del sitio ni te quedes solo con la rabia. Aunque muy pocos lo hacen, tú sí puedes hacer que la alcaldía o el Estado te paguen hasta el último peso del arreglo, pero debes seguir este paso a paso en los primeros 10 minutos. Lo primero es no mover el carro por nada del mundo. Saca el celular y tómale fotos y video al hueco donde se vea la profundidad, la falta de señalización y la dirección exacta. Lo segundo es fotografiar detalladamente el daño de tu carro ahí mismo. Lo tercero y más importante: llama de inmediato a la línea 123 y pide a la Policía de Tránsito para que levanten el croquis o informe oficial del accidente por mal estado de la vía, porque sin esa prueba reina no te van a responder. Y cuarto: con las fotos, la factura del taller y ese reporte oficial, radicas una reclamación formal a través de la plataforma Bogotá Te Escucha dirigida al IDU o a la Alcaldía Local si el hecho fue en una vía de barrio. Guarda este video, compártelo con quien maneje todos los días en la ciudad y cúrate en salud.</div>
+        </div>
+
+        <!-- GUION 7 (ORGÁNICO) -->
+        <div id="g7" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-organico"><i class="fa-solid fa-video"></i> ORGÁNICO</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#07</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-cyan-400 transition-colors leading-snug">Ojo con el precio de los parqueaderos</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran por dejar el carro solo un momento..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Ojo con el precio de los parqueaderos', 'Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran por dejar el carro...', 'g7-text', 'ORGÁNICO')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g7-text" class="hidden">Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran por dejar el carro solo un momento y entender si esto que hacen es legal o si nos están robando de frente. Para que te hagas una idea, dejar el carro aquí un par de horas te puede costar prácticamente lo mismo que una almuerzo o un día de trabajo. Pero la gran pregunta es: ¿es legal que cobren tanto? La respuesta es sí. En Bogotá, las tarifas no son un invento del dueño del parqueadero, están reguladas por decreto según la zona, si el parqueadero es subterráneo, en estructura o a nivel de piso, y el tipo de piso que tiene. Entre más transitada la zona y mejor la infraestructura, más alto es el tope legal por minuto. Pero ojo a esto para que te cures en salud: aunque te cobren una tarifa altísima, lo que jamás es legal es que se laven las manos con el letrero de 'no nos hacemos responsables por daños o robos'. Por ley, esa tarifa alta que estás pagando incluye obligatoriamente una custodia y una póliza que los obliga a responder por rayones, golpes o pérdidas dentro del establecimiento. Si vas a pagar caro por parquear, exige que te entreguen el recibo con la hora exacta, revisa la tarifa por minuto fijada a la vista y reporta cualquier novedad antes de sacar el carro del lugar. Guarda este video antes de salir este fin de semana y compártelo con el amigo que siempre reniega de los parqueaderos.</div>
+        </div>
+
+        <!-- GUION 8 (ORGÁNICO) -->
+        <div id="g8" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-organico"><i class="fa-solid fa-video"></i> ORGÁNICO</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#08</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-cyan-400 transition-colors leading-snug">Historia de un cliente que se estrelló trabajando en aplicaciones</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz. Llamó al numeral de asistencia..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Historia de un cliente que se estrelló trabajando en aplicaciones', 'Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz...', 'g8-text', 'ORGÁNICO')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g8-text" class="hidden">Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz. Llamó al numeral de asistencia de la aseguradora, llegó la grúa, trasladaron el carro al taller y, por la gravedad de los daños, declararon la pérdida total. El vehículo estaba cotizado en unos 65 millones de pesos y él solo estaba a la espera del correo con el desembolso de la indemnización. Y el correo efectivamente le llegó, pero la respuesta no fue la que esperaba: la aseguradora le negó el pago total de la indemnización. ¿La razón? Identificaron que en el momento del accidente el carro estaba prestando servicio de transporte de pasajeros a través de aplicaciones. ¿Podía la aseguradora negarse a pagar? Lamentablemente sí. Si tu carro está asegurado bajo la modalidad de uso particular o familiar y lo utilizas con fines comerciales o de plataforma, ninguna aseguradora te va a responder ante un siniestro. Para que te cubra, el vehículo debe estar asegurado como utilitario o comercial. Y aquí viene el gran Secreto que casi nadie sabe: ¿se puede asegurar un vehículo de placa particular como utilitario o de plataforma? La respuesta es sí, pero no con todas las compañías ni para todos los modelos. Esto depende de cómo se clasifique el riesgo al momento de cotizar y de contar con la asesoría correcta. Si hoy usas tu carro para trabajar en aplicaciones y sufres un choque grave o un hurto teniendo una póliza tradicional, estás corriendo el riesgo de perder todo tu patrimonio. Cúrate en salud, cotiza tu póliza de la forma correcta y asegúrate de estar cubierto de verdad. Escribe la palabra 'cotización' en los comentarios y te mostramos las opciones reales que sí se adaptan a tu vehículo.</div>
+        </div>
+
+        <!-- GUION 9 (ORGÁNICO) -->
+        <div id="g9" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-organico"><i class="fa-solid fa-video"></i> ORGÁNICO</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#09</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-cyan-400 transition-colors leading-snug">Bogotá en obra gris</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna, y aunque a todos nos saca de quicio..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Bogotá en obra gris', 'Bogotá va a durar por lo menos cinco o seis años más metida en una obra gris eterna...', 'g9-text', 'ORGÁNICO')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g9-text" class="hidden">Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna, y aunque a todos nos saca de quicio el trancón, hay que admitir algo que genera mucha polémica: este caos es el costo obligatorio para que la movilidad por fin mejore. El problema no es la promesa del metro o las nuevas troncales, sino el 'mientras tanto' y la forma en que algunas obras se han dilatado hasta desesperar a cualquiera. Lugares como la Avenida 68, el tramo de la Avenida Laureano Gómez en la 191 o las eternas intervenciones en la Calle 72 son el ejemplo perfecto de frentes de obra que parecen no avanzar nunca. Vivimos atrapados entre polisombras, desvíos improvisados y huecos tapados con tierra que no solo nos quitan horas de vida, sino que destruyen la suspensión, deforman las llantas y duplican el riesgo de cualquier choque simple. La ciudad se va a demorar bastante en cambiar, así que lo único que nos queda a los conductores para curarnos en salud es manejar con mucha más malicia, aumentar la distancia de frenado en zonas de construcción y no confiarse de las vías de noche. Paciencia, porque a esta 'obra gris' todavía le queda bastante recorrido.</div>
+        </div>
+
+        <!-- GUION 10 (ORGÁNICO) -->
+        <div id="g10" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 badge-organico"><i class="fa-solid fa-video"></i> ORGÁNICO</span>
+              <span class="text-xs font-black text-gray-500 font-mono">#10</span>
+            </div>
+            <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-cyan-400 transition-colors leading-snug">Ojo con los eléctricos</h3>
+            <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"Si tienes o estás pensando en comprar un carro eléctrico, hay tres secretos técnicos que tienes que saber..."</p>
+          </div>
+          <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
+            <button onclick="openModal('Ojo con los eléctricos', 'Si tienes o estás pensando en comprar un carro eléctrico, hay tres secretos técnicos que tienes que saber...', 'g10-text', 'ORGÁNICO')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition"><i class="fa-solid fa-expand text-[10px]"></i> Leer Completo</button>
+            <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
+          </div>
+          <div id="g10-text" class="hidden">Si tienes o estás pensando en comprar un carro eléctrico, hay tres secretos técnicos que tienes que saber para curarte en salud y no tirarte la garantía o el motor por puro desconocimiento. El primero es la grúa: un eléctrico jamás se debe remolcar arrastrado como un carro térmico normal. Al rodar las ruedas sin el sistema activo, los motores generan energía que no tiene a dónde ir y pueden sobrecalentar o fundir el sistema inversor. Siempre debe subirse completo sobre una grúa de planchón o rampa especial donde las cuatro ruedas queden totalmente inmóviles. El segundo punto son los famosos iniciadores: si te piden 'iniciar' o pasarle corriente a otro carro convencionado que se quedó sin batería, no lo hagas. La batería de 12 voltios de un eléctrico está diseñada para gestionar la electrónica interna, no para soportar el pico de arranque de un motor a gasolina; intentar dar un 'iniciador' puede generar un pico de voltaje y achicharrar los módulos electrónicos de tu carro. Y el tercero es el lavado de la zona del capó: por costumbre, muchos llevan el carro al autolavado y dejan que le metan manguera a presión al compartimento delantero. Aunque vienen aislados, el agua a alta presión en los conectores de alto voltaje o sensores de corriente puede generar sulfatación, cortocircuitos o bloqueos por aislamiento. Cuidar un eléctrico es sencillo, pero requiere cambiar los chips de la conducción tradicional.</div>
+        </div>
+
       </div>
     </section>
 
@@ -136,196 +307,4 @@
         <div id="modalBody" class="p-4 bg-black/60 rounded-xl text-gray-200 text-sm leading-relaxed border border-white/5 select-all"></div>
       </div>
       <div class="flex justify-end gap-3 pt-4 border-t border-white/10">
-        <button onclick="copyModalText()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition">
-          <i class="fa-regular fa-copy"></i> Copiar Texto
-        </button>
-        <button onclick="closeModal()" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Cerrar</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const guiones = [
-      {
-        id: "g1", num: "#01", type: "pauta", title: "14 Cotizaciones en 2 Minutos: Compara y Gana",
-        hook: "Hay una forma de ahorrar en tu póliza todo riesgo y los pasos para conseguirlo son muy sencillos...",
-        text: "Hay una forma muy sencilla de ahorrar en tu póliza Todo Riesgo sin dejar de cumplir todos los requisitos de endoso que te exige el banco, y estos son los 3 pasos para lograrlo. Paso 1: Revisa las aseguradoras que cuentan con acuerdos de pago directo para diferir tus cuotas sin pagar intereses adicionales. Paso 2: Solicita tu descuento por cónyuge o grupo familiar. Pocas personas lo saben, pero muchas compañías bajan el valor solo por esta condición. Y el paso más importante, el Paso 3: No te quedes con una sola opción. En Segurautos comparamos tu vehículo con más de 14 aseguradoras del país al mismo tiempo para encontrarte la tarifa más baja garantizando que la póliza cumpla al 100% con los requerimientos de tu banco. Hacer este proceso con nosotros toma menos de 2 minutos. Haz clic aquí abajo, ingresa los datos de tu vehículo y te enviamos la comparativa de inmediato."
-      },
-      {
-        id: "g2", num: "#02", type: "pauta", title: "No Pagues de Más en el Concesionario: Exige tu Derecho",
-        hook: "Que no te engañen diciendo que es obligatorio asegurar el carro directamente con ellos...",
-        text: "¡Que no te engañen en el concesionario ni en el banco! Decirte que estás OBLIGADO a comprar la póliza Todo Riesgo con ellos para que te desembolsen el crédito o te dejen sacar el carro es una mentira total. La Superintendencia Financiera te protege y exige que puedas elegir libremente la aseguradora que mejor te convenga en precio, coberturas y servicio. No regales tu dinero pagando pólizas infladas por pura desinformación. Antes de firmar cualquier cosa o sacar tu vehículo, haz valer tu derecho: en Segurautos tomamos los requisitos de tu crédito y los cotizamos con más de 14 aseguradoras al mismo tiempo para garantizarte la opción más económica que cumple al 100% con lo que pide el banco. Haz clic abajo, cotiza gratis en menos de 2 minutos y no te dejes meter el dedo en la boca."
-      },
-      {
-        id: "g3", num: "#03", type: "pauta", title: "El Error MÁS Caro al Comprar Carro Nuevo",
-        hook: "Si estás a punto de desembolsar un crédito, ten cuidado con la presión del seguro obligatorio...",
-        text: "Si estás a punto de sacar carro o te van a desembolsar un crédito, ten muchísimo cuidado con esto porque a casi todo el mundo se la aplican. En el concesionario o en el banco muchas veces te dicen que para poder entregarte el carro o desembolsar la plata, tienes que comprar la póliza Todo Riesgo obligatoriamente con la aseguradora que ellos te ofrecen. Y eso es completamente falso. Por norma de la Superintendencia Financiera tú tienes todo el derecho de elegir la aseguradora que a ti te dé la gana, la que mejor precio te dé o la que mejores coberturas tenga, siempre y cuando cumpla los requisitos de endoso del banco. No te dejes presionar ni pagues de más por afán. Antes de firmar nada, cotiza por tu cuenta. Por ejemplo en Segurautos te comparan esa misma póliza con más de 14 aseguradoras al tiempo para ver cuál te sale más barata y que cumpla exactamente lo que te exige el banco. Cotiza primero, compara y no regales tu plata."
-      },
-      {
-        id: "g4", num: "#04", type: "pauta", title: "¿Tu Seguro se Vence Pronto? No Cometas Este Error",
-        hook: "Renovar en automático te puede costar hasta un 30% más. Aprende a cotizar a tiempo...",
-        text: "Si tu póliza Todo Riesgo está a punto de vencerse, no cometas el error que comete la mayoría: renovar en automático sin revisar. Esos días previos al vencimiento son literalmente la mejor oportunidad que tienes para conseguir un precio mucho más bajo, mejorar coberturas, tener mejor servicio e incluso contar con un doble respaldo para tu carro. La gente por costumbre termina pagando lo mismo o más caro cada año con la misma compañía por no darse el trabajo de comparar. Y es facilísimo: en Segurautos cotizamos tu renovación al mismo tiempo con las mejores aseguradoras del país, más de 14 opciones en total, garantizando que no pierdas tus beneficios y encuentres la tarifa más económica del mercado. Si ya te llegó la carta o la llamada de renovación, no firmes ni pagues todavía. Toca el botón de abajo, déjanos los datos de tu vehículo y te mostramos en 2 minutos cuánto te puedes ahorrar este año."
-      },
-      {
-        id: "g5", num: "#05", type: "pauta", title: "Atención Camioneros: Las Pólizas Bajaron de Precio",
-        hook: "Opciones especiales de seguros de carga y transporte pesado con tarifas competitivas...",
-        text: "Buenas noticias para los camioneros y propietarios de vehículos pesados: el costo de los seguros para transporte pesado bajó y las opciones que tienes a tu disposición en este momento son las mejores del mercado. Si estás pagando un seguro demasiado costoso o se te avecina la renovación, este es el momento exacto para revisar. Cuando cotizas con una de nuestras gestoras en Segurautos, nos encargamos de comparar entre las mejores aseguradoras del país para hacer todo lo posible por mejorar el precio de tu seguro actual, entregándote exactamente las coberturas que necesitas para rodar y circular con total tranquilidad por todo el territorio nacional. No renueves ni asegures a ciegas pagando de más. Toca el botón de abajo, habla directamente con una de nuestras gestoras especializadas y descubre de inmediato cuánto te vas a ahorrar en la póliza de tu vehículo pesado."
-      },
-      {
-        id: "g6", num: "#06", type: "organico", title: "Cómo Cobrarle a la Alcaldía un Rin o Llanta Roto",
-        hook: "Si vas manejando, caes en un hueco feo y se te rompe un rin o la suspensión, no te muevas del sitio. El Estado te puede pagar el arreglo...",
-        text: "Si vas manejando, caes en un hueco feo y se te rompe un rin, se te estalla una llanta o se te daña la suspensión, no te muevas del sitio ni te quedes solo con la rabia. Aunque muy pocos lo hacen, tú sí puedes hacer que la alcaldía o el Estado te paguen hasta el último peso del arreglo, pero debes seguir este paso a paso en los primeros 10 minutos. Lo primero es no mover el carro por nada del mundo. Saca el celular y tómale fotos y video al hueco donde se vea la profundidad, la falta de señalización y la dirección exacta. Lo segundo es fotografiar detalladamente el daño de tu carro ahí mismo. Lo tercero y más importante: llama de inmediato a la línea 123 y pide a la Policía de Tránsito para que levanten el croquis o informe oficial del accidente por mal estado de la vía, porque sin esa prueba reina no te van a responder. Y cuarto: con las fotos, la factura del taller y ese reporte oficial, radicas una reclamación formal a través de la plataforma Bogotá Te Escucha dirigida al IDU o a la Alcaldía Local si el hecho fue en una vía de barrio. Guarda este video, compártelo con quien maneje todos los días en la ciudad y cúrate en salud."
-      },
-      {
-        id: "g7", num: "#07", type: "organico", title: "¿Es Legal lo que Cobran en los Parqueaderos?",
-        hook: "Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran y entender si esto es legal...",
-        text: "Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran por dejar el carro solo un momento y entender si esto que hacen es legal o si nos están robando de frente. Para que te hagas una idea, dejar el carro aquí un par de horas te puede costar prácticamente lo mismo que un almuerzo o un día de trabajo. Pero la gran pregunta es: ¿es legal que cobren tanto? La respuesta es sí. En Bogotá, las tarifas no son un invento del dueño del parqueadero, están reguladas por decreto según la zona, si el parqueadero es subterráneo, en estructura o a nivel de piso, y el tipo de piso que tiene. Entre más transitada la zona y mejor la infraestructura, más alto es el tope legal por minuto. Pero ojo a esto para que te cures en salud: aunque te cobren una tarifa altísima, lo que jamás es legal es que se laven las manos con el letrero de 'no nos hacemos responsables por daños o robos'. Por ley, esa tarifa alta que estás pagando incluye obligatoriamente una custodia y una póliza que los obliga a responder por rayones, golpes o pérdidas dentro del establecimiento. Si vas a pagar caro por parquear, exige que te entreguen el recibo con la hora exacta, revisa la tarifa por minuto fijada a la vista y reporta cualquier novedad antes de sacar el carro del lugar. Guarda este video antes de salir este fin de semana y compártelo con el amigo que siempre reniega de los parqueaderos."
-      },
-      {
-        id: "g8", num: "#08", type: "organico", title: "Perdió 65 Millones por Usar Apps con Seguro Normal",
-        hook: "Hace poco nos llegó el caso de un cliente que se estrelló contra un poste. La aseguradora le negó la indemnización de 65 millones...",
-        text: "Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz. Llamó al numeral de asistencia de la aseguradora, llegó la grúa, trasladaron el carro al taller y, por la gravedad de los daños, declararon la pérdida total. El vehículo estaba cotizado en unos 65 millones de pesos y él solo estaba a la espera del correo con el desembolso de la indemnización. Y el correo efectivamente le llegó, pero la respuesta no fue la que esperaba: la aseguradora le negó el pago total de la indemnización. ¿La razón? Identificaron que en el momento del accidente el carro estaba prestando servicio de transporte de pasajeros a través de aplicaciones. ¿Podía la aseguradora negarse a pagar? Lamentablemente sí. Si tu carro está asegurado bajo la modalidad de uso particular o familiar y lo utilizas con fines comerciales o de plataforma, ninguna aseguradora te va a responder ante un siniestro. Para que te cubra, el vehículo debe estar asegurado como utilitario o comercial. Y aquí viene el gran secreto que casi nadie sabe: ¿se puede asegurar un vehículo de placa particular como utilitario o de plataforma? La respuesta es sí, pero no con todas las compañías ni para todos los modelos. Esto depende de cómo se clasifique el riesgo al momento de cotizar y de contar con la asesoría correcta. Si hoy usas tu carro para trabajar en aplicaciones y sufres un choque grave o un hurto teniendo una póliza tradicional, estás corriendo el riesgo de perder todo tu patrimonio. Cúrate en salud, cotiza tu póliza de la forma correcta y asegúrate de estar cubierto de verdad. Escribe la palabra 'cotización' en los comentarios y te mostramos las opciones reales que sí se adaptan a tu vehículo."
-      },
-      {
-        id: "g9", num: "#09", type: "organico", title: "Bogotá en 'Obra Gris': El Precio de la Movilidad Futura",
-        hook: "Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna. La Av 68, la 191 y la 72 son ejemplos...",
-        text: "Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna, y aunque a todos nos saca de quicio el trancón, hay que admitir algo que genera mucha polémica: este caos es el costo obligatorio para que la movilidad por fin mejore. El problema no es la promesa del metro o las nuevas troncales, sino el 'mientras tanto' y la forma en que algunas obras se han dilatado hasta desesperar a cualquiera. Lugares como la Avenida 68, el tramo de la Avenida Laureano Gómez en la 191 o las eternas intervenciones en la Calle 72 son el ejemplo perfecto de frentes de obra que parecen no avanzar nunca. Vivimos atrapados entre polisombras, desvíos improvisados y huecos tapados con tierra que no solo nos quitan horas de vida, sino que destruyen la suspensión, deforman las llantas y duplican el riesgo de cualquier choque simple. La ciudad se va a demorar bastante en cambiar, así que lo único que nos queda a los conductores para curarnos en salud es manejar con mucha más malicia, aumentar la distancia de frenado en zonas de construcción y no confiarse de las vías de noche. Paciencia, porque a esta 'obra gris' todavía le queda bastante recorrido."
-      },
-      {
-        id: "g10", num: "#10", type: "organico", title: "3 Errores Mortales que Destruyen tu Carro Eléctrico",
-        hook: "Si tienes o estás pensando en comprar un carro eléctrico, hay tres secretos técnicos que tienes que saber para no dañarlo...",
-        text: "Si tienes o estás pensando en comprar un carro eléctrico, hay tres secretos técnicos que tienes que saber para curarte en salud y no tirarte la garantía o el motor por puro desconocimiento. El primero es la grúa: un eléctrico jamás se debe remolcar arrastrado como un carro térmico normal. Al rodar las ruedas sin el sistema activo, los motores generan energía que no tiene a dónde ir y pueden sobrecalentar o fundir el sistema inversor. Siempre debe subirse completo sobre una grúa de planchón o rampa especial donde las cuatro ruedas queden totalmente inmóviles. El segundo punto son los famosos iniciadores: si te piden 'iniciar' o pasarle corriente a otro carro convencional que se quedó sin batería, no lo hagas. La batería de 12 voltios de un eléctrico está diseñada para gestionar la electrónica interna, no para soportar el pico de arranque de un motor a gasolina; intentar dar un 'iniciador' puede generar un pico de voltaje y achicharrar los módulos electrónicos de tu carro. Y el tercero es el lavado de la zona del capó: por costumbre, muchos llevan el carro al autolavado y dejan que le metan manguera a presión al compartimento delantero. Aunque vienen aislados, el agua a alta presión en los conectores de alto voltaje o sensores de corriente puede generar sulfatación, cortocircuitos o bloqueos por aislamiento. Cuidar un eléctrico es sencillo, pero requiere cambiar los chips de la conducción tradicional."
-      }
-    ];
-
-    let currentFilter = 'all';
-
-    function renderCards() {
-      const container = document.getElementById('mainBank');
-      if (!container) return;
-      container.innerHTML = '';
-      guiones.forEach(g => {
-        const card = createCardElement(g);
-        container.appendChild(card);
-      });
-      updateCounts();
-    }
-
-    function createCardElement(g) {
-      const div = document.createElement('div');
-      div.id = g.id;
-      div.draggable = true;
-      div.ondragstart = (e) => drag(e);
-      
-      const isPauta = g.type === 'pauta';
-      div.className = `glass-card p-5 rounded-2xl border transition cursor-grab active:cursor-grabbing relative group flex flex-col justify-between ${
-        isPauta ? 'card-pauta' : 'card-organico'
-      }`;
-
-      const badgeClass = isPauta ? 'badge-pauta' : 'badge-organico';
-      const labelText = isPauta ? 'PAUTA' : 'ORGÁNICO';
-      const icon = isPauta ? 'fa-bolt' : 'fa-video';
-
-      div.innerHTML = `
-        <div>
-          <div class="flex justify-between items-center mb-3">
-            <span class="px-3 py-1 rounded-lg text-[10px] font-black tracking-wider uppercase flex items-center gap-1.5 ${badgeClass}">
-              <i class="fa-solid ${icon}"></i> ${labelText}
-            </span>
-            <span class="text-xs font-black text-gray-500 font-mono">${g.num}</span>
-          </div>
-          <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-blue-400 transition-colors leading-snug">${g.title}</h3>
-          <p class="text-xs text-gray-400 mb-4 line-clamp-3 leading-relaxed">"${g.hook}"</p>
-        </div>
-        <div class="flex justify-between items-center pt-3 border-t border-white/10 text-xs">
-          <button onclick="openModal('${g.id}')" class="text-blue-400 hover:text-blue-300 font-bold flex items-center gap-1.5 transition">
-            <i class="fa-solid fa-expand text-[10px]"></i> Leer Completo
-          </button>
-          <span class="text-[10px] text-gray-500 uppercase font-black tracking-widest"><i class="fa-solid fa-grip-lines"></i> EN BANCO</span>
-        </div>
-      `;
-      return div;
-    }
-
-    function allowDrop(ev) { ev.preventDefault(); }
-    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
-
-    function drop(ev, targetId) {
-      ev.preventDefault();
-      const data = ev.dataTransfer.getData("text");
-      const card = document.getElementById(data);
-      const target = document.getElementById(targetId);
-
-      if (target && card) {
-        const placeholder = target.querySelector('p');
-        if (placeholder) placeholder.remove();
-        target.appendChild(card);
-        updateCounts();
-      }
-    }
-
-    function updateCounts() {
-      const s1 = document.getElementById('sesion1').querySelectorAll('.glass-card').length;
-      const s2 = document.getElementById('sesion2').querySelectorAll('.glass-card').length;
-      document.getElementById('count-sesion1').innerText = `${s1} guion${s1 !== 1 ? 'es' : ''}`;
-      document.getElementById('count-sesion2').innerText = `${s2} guion${s2 !== 1 ? 'es' : ''}`;
-    }
-
-    function openModal(id) {
-      const g = guiones.find(item => item.id === id);
-      if (!g) return;
-
-      const isPauta = g.type === 'pauta';
-      const modalCategory = document.getElementById('modalCategory');
-      modalCategory.innerText = isPauta ? 'PAUTA' : 'ORGÁNICO';
-      modalCategory.className = `px-3 py-1 rounded-full text-xs font-extrabold uppercase ${
-        isPauta ? 'badge-pauta' : 'badge-organico'
-      }`;
-
-      document.getElementById('modalTitle').innerText = g.title;
-      document.getElementById('modalHook').innerText = g.hook;
-      document.getElementById('modalBody').innerText = g.text;
-      document.getElementById('scriptModal').classList.remove('hidden');
-      document.getElementById('scriptModal').classList.add('flex');
-    }
-
-    function closeModal() {
-      document.getElementById('scriptModal').classList.add('hidden');
-      document.getElementById('scriptModal').classList.remove('flex');
-    }
-
-    function copyModalText() {
-      const text = document.getElementById('modalBody').innerText;
-      navigator.clipboard.writeText(text);
-      alert('¡Guion copiado al portapapeles!');
-    }
-
-    function setFilter(filter) {
-      currentFilter = filter;
-      document.querySelectorAll('[id^="btn-"]').forEach(btn => btn.className = btn.className.replace('bg-white/20', 'bg-white/5'));
-      document.getElementById(`btn-${filter}`).className += ' bg-white/20';
-      filterCards();
-    }
-
-    function filterCards() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      guiones.forEach(g => {
-        const card = document.getElementById(g.id);
-        if (!card) return;
-        const matchesSearch = g.title.toLowerCase().includes(query) || g.text.toLowerCase().includes(query) || g.hook.toLowerCase().includes(query);
-        const matchesFilter = currentFilter === 'all' || g.type === currentFilter;
-
-        if (matchesSearch && matchesFilter) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    }
-
-    // Ejecutar renderizado
-    renderCards();
-    document.addEventListener('DOMContentLoaded', renderCards);
-  </script>
-</body>
-</html>
+        <button onclick="copyModalText()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center
