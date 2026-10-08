@@ -16,7 +16,7 @@
     .card-organico:hover { border-color: #00F2FE; box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.3); }
     .badge-pauta { background: rgba(255, 215, 0, 0.15); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.3); }
     .badge-organico { background: rgba(0, 242, 254, 0.15); color: #00F2FE; border: 1px solid rgba(0, 242, 254, 0.3); }
-    .drop-zone { min-height: 200px; transition: all 0.2s ease; }
+    .drop-zone { min-height: 220px; transition: all 0.2s ease; }
     .drop-zone.drag-over { background: rgba(255, 255, 255, 0.08); border-color: #3B82F6; }
   </style>
 </head>
@@ -41,22 +41,33 @@
     </div>
   </header>
 
-  <!-- CONTENEDOR PRINCIPAL -->
+  <!-- FILTROS Y BÚSQUEDA -->
   <main class="max-w-7xl mx-auto space-y-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 glass-card">
+      <div class="relative w-full md:w-96">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input type="text" id="searchInput" oninput="filterCards()" placeholder="Buscar guion o palabra clave..." class="w-full pl-11 pr-4 py-2.5 bg-black/50 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-blue-500 transition">
+      </div>
+      <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+        <button onclick="setFilter('all')" id="btn-all" class="px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition bg-white/20 text-white shadow-lg">Todos (10)</button>
+        <button onclick="setFilter('pauta')" id="btn-pauta" class="px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition bg-yellow-500/10 text-yellow-400 hover:bg-yellow-500/20 border border-yellow-500/30">Pauta (5)</button>
+        <button onclick="setFilter('organico')" id="btn-organico" class="px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 border border-cyan-500/30">Orgánico (5)</button>
+      </div>
+    </div>
 
-    <!-- BANCO GENERAL DE GUIONES EN HTML PURO -->
+    <!-- BANCO GENERAL DE GUIONES -->
     <section class="space-y-4">
       <div class="flex items-center justify-between">
         <h2 class="text-xl font-bold flex items-center gap-2 text-white">
           <i class="fa-solid fa-layer-group text-blue-400"></i> Banco de Guiones Disponible (10)
         </h2>
-        <span class="text-xs text-gray-400 hidden sm:inline"><i class="fa-solid fa-hand-pointer text-blue-400"></i> Arrastra las fichas a la sección de planificación abajo</span>
+        <span class="text-xs text-gray-400 hidden sm:inline"><i class="fa-solid fa-hand-pointer text-blue-400"></i> Arrastra las fichas a las sesiones de abajo</span>
       </div>
 
       <div id="mainBank" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 drop-zone p-4 rounded-2xl border-2 border-dashed border-white/10 bg-black/20" ondrop="drop(event, 'mainBank')" ondragover="allowDrop(event)">
         
-        <!-- GUION 1 -->
-        <div id="g1" draggable="true" ondragstart="drag(event)" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 1 -->
+        <div id="g1" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-pauta">PAUTA</span>
             <button onclick="copyText('g1-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -70,8 +81,8 @@
           <div id="g1-text" class="hidden">Hay una forma muy sencilla de ahorrar en tu póliza Todo Riesgo sin dejar de cumplir todos los requisitos de endoso que te exige el banco, y estos son los 3 pasos para lograrlo. Paso 1: Revisa las aseguradoras que cuentan con acuerdos de pago directo para diferir tus cuotas sin pagar intereses adicionales. Paso 2: Solicita tu descuento por cónyuge o grupo familiar. Pocas personas lo saben, pero muchas compañías bajan el valor solo por esta condición. Y el paso más importante, el Paso 3: No te quedes con una sola opción. En Segurautos comparamos tu vehículo con más de 14 aseguradoras del país al mismo tiempo para encontrarte la tarifa más baja garantizando que la póliza cumpla al 100% con los requerimientos de tu banco. Hacer este proceso con nosotros toma menos de 2 minutos. Haz clic aquí abajo, ingresa los datos de tu vehículo y te enviamos la comparativa de inmediato.</div>
         </div>
 
-        <!-- GUION 2 -->
-        <div id="g2" draggable="true" ondragstart="drag(event)" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 2 -->
+        <div id="g2" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-pauta">PAUTA</span>
             <button onclick="copyText('g2-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -85,8 +96,8 @@
           <div id="g2-text" class="hidden">¡Que no te engañen en el concesionario ni en el banco! Decirte que estás OBLIGADO a comprar la póliza Todo Riesgo con ellos para que te desembolsen el crédito o te dejen sacar el carro es una mentira total. La Superintendencia Financiera te protege y exige que puedas elegir libremente la aseguradora que mejor te convenga en precio, coberturas y servicio. No regales tu dinero pagando pólizas infladas por pura desinformación. Antes de firmar cualquier cosa o sacar tu vehículo, haz valer tu derecho: en Segurautos tomamos los requisitos de tu crédito y los cotizamos con más de 14 aseguradoras al mismo tiempo para garantizarte la opción más económica que cumple al 100% con lo que pide el banco. Haz clic abajo, cotiza gratis en menos de 2 minutos y no te dejes meter el dedo en la boca.</div>
         </div>
 
-        <!-- GUION 3 -->
-        <div id="g3" draggable="true" ondragstart="drag(event)" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 3 -->
+        <div id="g3" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-pauta">PAUTA</span>
             <button onclick="copyText('g3-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -100,8 +111,8 @@
           <div id="g3-text" class="hidden">Si estás a punto de sacar carro o te van a desembolsar un crédito, ten muchísimo cuidado con esto porque a casi todo el mundo se la aplican. En el concesionario o en el banco muchas veces te dicen que para poder entregarte el carro o desembolsar la plata, tienes que comprar la póliza Todo Riesgo obligatoriamente con la aseguradora que ellos te ofrecen. Y eso es completamente falso. Por norma de la Superintendencia Financiera tú tienes todo el derecho de elegir la aseguradora que a ti te dé la gana, la que mejor precio te dé o la que mejores coberturas tenga, siempre y cuando cumpla los requisitos de endoso del banco. No te dejes presionar ni pagues de más por afán. Antes de firmar nada, cotiza por tu cuenta. Por ejemplo en Segurautos te comparan esa misma póliza con más de 14 aseguradoras al tiempo para ver cuál te sale más barata y que cumpla exactamente lo que te exige el banco. Cotiza primero, compara y no regales tu plata.</div>
         </div>
 
-        <!-- GUION 4 -->
-        <div id="g4" draggable="true" ondragstart="drag(event)" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 4 -->
+        <div id="g4" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-pauta">PAUTA</span>
             <button onclick="copyText('g4-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -115,8 +126,8 @@
           <div id="g4-text" class="hidden">Si tu póliza Todo Riesgo está a punto de vencerse, no cometas el error que comete la mayoría: renovar en automático sin revisar. Esos días previos al vencimiento son literalmente la mejor oportunidad que tienes para conseguir un precio mucho más bajo, mejorar coberturas, tener mejor servicio e incluso contar con un doble respaldo para tu carro. La gente por costumbre termina pagando lo mismo o más caro cada año con la misma compañía por no darse el trabajo de comparar. Y es facilísimo: en Segurautos cotizamos tu renovación al mismo tiempo con las mejores aseguradoras del país, más de 14 opciones en total, garantizando que no pierdas tus beneficios y encuentres la tarifa más económica del mercado. Si ya te llegó la carta o la llamada de renovación, no firmes ni pagues todavía. Toca el botón de abajo, déjanos los datos de tu vehículo y te mostramos en 2 minutos cuánto te puedes ahorrar este año.</div>
         </div>
 
-        <!-- GUION 5 -->
-        <div id="g5" draggable="true" ondragstart="drag(event)" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 5 -->
+        <div id="g5" draggable="true" ondragstart="drag(event)" data-type="pauta" class="glass-card card-pauta p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-pauta">PAUTA</span>
             <button onclick="copyText('g5-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -130,8 +141,8 @@
           <div id="g5-text" class="hidden">Buenas noticias para los camioneros y propietarios de vehículos pesados: el costo de los seguros para transporte pesado bajó y las opciones que tienes a tu disposición en este momento son las mejores del mercado. Si estás pagando un seguro demasiado costoso o se te avecina la renovación, este es el momento exacto para revisar. Cuando cotizas con una de nuestras gestoras en Segurautos, nos encargamos de comparar entre las mejores aseguradoras del país para hacer todo lo posible por mejorar el precio de tu seguro actual, entregándote exactamente las coberturas que necesitas para rodar y circular con total tranquilidad por todo el territorio nacional. No renueves ni asegures a ciegas pagando de más. Toca el botón de abajo, habla directamente con una de nuestras gestoras especializadas y descubre de inmediato cuánto te vas a ahorrar en la póliza de tu vehículo pesado.</div>
         </div>
 
-        <!-- GUION 6 -->
-        <div id="g6" draggable="true" ondragstart="drag(event)" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 6 -->
+        <div id="g6" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-organico">ORGÁNICO</span>
             <button onclick="copyText('g6-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -145,8 +156,8 @@
           <div id="g6-text" class="hidden">Si vas manejando, caes en un hueco feo y se te rompe un rin, se te estalla una llanta o se te daña la suspensión, no te muevas del sitio ni te quedes solo con la rabia. Aunque muy pocos lo hacen, tú sí puedes hacer que la alcaldía o el Estado te paguen hasta el último peso del arreglo, pero debes seguir este paso a paso en los primeros 10 minutos. Lo primero es no mover el carro por nada del mundo. Saca el celular y tómale fotos y video al hueco donde se vea la profundidad, la falta de señalización y la dirección exacta. Lo segundo es fotografiar detalladamente el daño de tu carro ahí mismo. Lo tercero y más importante: llama de inmediato a la línea 123 y pide a la Policía de Tránsito para que levanten el croquis o informe oficial del accidente por mal estado de la vía, porque sin esa prueba reina no te van a responder. Y cuarto: con las fotos, la factura del taller y ese reporte oficial, radicas una reclamación formal a través de la plataforma Bogotá Te Escucha dirigida al IDU o a la Alcaldía Local si el hecho fue en una vía de barrio. Guarda este video, compártelo con quien maneje todos los días en la ciudad y cúrate en salud.</div>
         </div>
 
-        <!-- GUION 7 -->
-        <div id="g7" draggable="true" ondragstart="drag(event)" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 7 -->
+        <div id="g7" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-organico">ORGÁNICO</span>
             <button onclick="copyText('g7-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -160,8 +171,8 @@
           <div id="g7-text" class="hidden">Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran por dejar el carro solo un momento y entender si esto que hacen es legal o si nos están robando de frente. Para que te hagas una idea, dejar el carro aquí un par de horas te puede costar prácticamente lo mismo que un almuerzo o un día de trabajo. Pero la gran pregunta es: ¿es legal que cobren tanto? La respuesta es sí. En Bogotá, las tarifas no son un invento del dueño del parqueadero, están reguladas por decreto según la zona, si el parqueadero es subterráneo, en estructura o a nivel de piso, y el tipo de piso que tiene. Entre más transitada la zona y mejor la infraestructura, más alto es el tope legal por minuto. Pero ojo a esto para que te cures en salud: aunque te cobren una tarifa altísima, lo que jamás es legal es que se laven las manos con el letrero de 'no nos hacemos responsables por daños o robos'. Por ley, esa tarifa alta que estás pagando incluye obligatoriamente una custodia y una póliza que los obliga a responder por rayones, golpes o pérdidas dentro del establecimiento. Si vas a pagar caro por parquear, exige que te entreguen el recibo con la hora exacta, revisa la tarifa por minuto fijada a la vista y reporta cualquier novedad antes de sacar el carro del lugar. Guarda este video antes de salir este fin de semana y compártelo con el amigo que siempre reniega de los parqueaderos.</div>
         </div>
 
-        <!-- GUION 8 -->
-        <div id="g8" draggable="true" ondragstart="drag(event)" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 8 -->
+        <div id="g8" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-organico">ORGÁNICO</span>
             <button onclick="copyText('g8-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -175,8 +186,8 @@
           <div id="g8-text" class="hidden">Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz. Llamó al numeral de asistencia de la aseguradora, llegó la grúa, trasladaron el carro al taller y, por la gravedad de los daños, declararon la pérdida total. El vehículo estaba cotizado en unos 65 millones de pesos y él solo estaba a la espera del correo con el desembolso de la indemnización. Y el correo efectivamente le llegó, pero la respuesta no fue la que esperaba: la aseguradora le negó el pago total de la indemnización. ¿La razón? Identificaron que en el momento del accidente el carro estaba prestando servicio de transporte de pasajeros a través de aplicaciones. ¿Podía la aseguradora negarse a pagar? Lamentablemente sí. Si tu carro está asegurado bajo la modalidad de uso particular o familiar y lo utilizas con fines comerciales o de plataforma, ninguna aseguradora te va a responder ante un siniestro. Para que te cubra, el vehículo debe estar asegurado como utilitario o comercial. Y aquí viene el gran secreto que casi nadie sabe: ¿se puede asegurar un vehículo de placa particular como utilitario o de plataforma? La respuesta es sí, pero no con todas las compañías ni para todos los modelos. Esto depende de cómo se clasifique el riesgo al momento de cotizar y de contar con la asesoría correcta. Si hoy usas tu carro para trabajar en aplicaciones y sufres un choque grave o un hurto teniendo una póliza tradicional, estás corriendo el riesgo de perder todo tu patrimonio. Cúrate en salud, cotiza tu póliza de la forma correcta y asegúrate de estar cubierto de verdad. Escribe la palabra 'cotización' en los comentarios y te mostramos las opciones reales que sí se adaptan a tu vehículo.</div>
         </div>
 
-        <!-- GUION 9 -->
-        <div id="g9" draggable="true" ondragstart="drag(event)" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 9 -->
+        <div id="g9" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-organico">ORGÁNICO</span>
             <button onclick="copyText('g9-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -190,8 +201,8 @@
           <div id="g9-text" class="hidden">Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna, y aunque a todos nos saca de quicio el trancón, hay que admitir algo que genera mucha polémica: este caos es el costo obligatorio para que la movilidad por fin mejore. El problema no es la promesa del metro o las nuevas troncales, sino el 'mientras tanto' y la forma en que algunas obras se han dilatado hasta desesperar a cualquiera. Lugares como la Avenida 68, el tramo de la Avenida Laureano Gómez en la 191 o las eternas intervenciones en la Calle 72 son el ejemplo perfecto de frentes de obra que parecen no avanzar nunca. Vivimos atrapados entre polisombras, desvíos improvisados y huecos tapados con tierra que no solo nos quitan horas de vida, sino que destruyen la suspensión, deforman las llantas y duplican el riesgo de cualquier choque simple. La ciudad se va a demorar bastante en cambiar, así que lo único que nos queda a los conductores para curarnos en salud es manejar con mucha más malicia, aumentar la distancia de frenado en zonas de construcción y no confiarse de las vías de noche. Paciencia, porque a esta 'obra gris' todavía le queda bastante recorrido.</div>
         </div>
 
-        <!-- GUION 10 -->
-        <div id="g10" draggable="true" ondragstart="drag(event)" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
+        <!-- FICHA 10 -->
+        <div id="g10" draggable="true" ondragstart="drag(event)" data-type="organico" class="glass-card card-organico p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group">
           <div class="flex justify-between items-start mb-3">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase badge-organico">ORGÁNICO</span>
             <button onclick="copyText('g10-text')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"><i class="fa-regular fa-copy"></i></button>
@@ -286,8 +297,8 @@
     }
 
     function updateCounts() {
-      const s1 = document.getElementById('sesion1').children.length;
-      const s2 = document.getElementById('sesion2').children.length;
+      const s1 = document.getElementById('sesion1').querySelectorAll('[draggable="true"]').length;
+      const s2 = document.getElementById('sesion2').querySelectorAll('[draggable="true"]').length;
       document.getElementById('count-s1').innerText = `${s1} guion${s1 !== 1 ? 'es' : ''}`;
       document.getElementById('count-s2').innerText = `${s2} guion${s2 !== 1 ? 'es' : ''}`;
     }
@@ -320,6 +331,33 @@
       const txt = document.getElementById('modalBody').innerText;
       navigator.clipboard.writeText(txt);
       alert('¡Guion copiado al portapapeles!');
+    }
+
+    let currentFilter = 'all';
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('[id^="btn-"]').forEach(btn => btn.className = btn.className.replace('bg-white/20', 'bg-white/5'));
+      document.getElementById(`btn-${filter}`).className += ' bg-white/20';
+      filterCards();
+    }
+
+    function filterCards() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('#mainBank > [draggable="true"]');
+      
+      cards.forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase();
+        const type = card.getAttribute('data-type');
+        const matchesSearch = title.includes(query);
+        const matchesFilter = currentFilter === 'all' || type === currentFilter;
+
+        if (matchesSearch && matchesFilter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
     }
   </script>
 </body>
