@@ -27,8 +27,10 @@
     .card-pauta:hover { border-color: #FFD700; box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.3); }
     .card-organico { border-color: rgba(0, 242, 254, 0.3); background: linear-gradient(145deg, rgba(0, 242, 254, 0.05) 0%, rgba(18, 24, 38, 0.8) 100%); }
     .card-organico:hover { border-color: #00F2FE; box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.3); }
-    .drop-zone { min-height: 180px; transition: all 0.2s ease; }
+    .drop-zone { min-height: 200px; transition: all 0.2s ease; }
     .drop-zone.drag-over { background: rgba(255, 255, 255, 0.05); border-color: #3B82F6; }
+    .badge-pauta { background: rgba(255, 215, 0, 0.15); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.3); }
+    .badge-organico { background: rgba(0, 242, 254, 0.15); color: #00F2FE; border: 1px solid rgba(0, 242, 254, 0.3); }
   </style>
 </head>
 <body class="p-4 md:p-8">
@@ -36,104 +38,115 @@
   <!-- HEADER BRANDING -->
   <header class="max-w-7xl mx-auto mb-8 p-6 glass-card rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10">
     <div class="flex items-center gap-4">
-      <div class="flex items-center gap-2 bg-blue-900/40 border border-blue-400/30 px-3 py-1.5 rounded-xl">
-        <i class="fa-solid fa-bullseye text-blue-400 text-lg"></i>
-        <span class="font-extrabold text-white text-sm tracking-wide">MAKE MARK</span>
+      <div class="flex items-center gap-2 bg-blue-900/40 border border-blue-400/30 px-4 py-2 rounded-xl">
+        <i class="fa-solid fa-bullseye text-blue-400 text-xl"></i>
+        <span class="font-extrabold text-white text-base tracking-wide">MAKE MARK</span>
       </div>
-      <span class="text-gray-500 font-bold">&times;</span>
-      <div class="flex items-center gap-2 bg-yellow-900/40 border border-yellow-400/30 px-3 py-1.5 rounded-xl">
-        <i class="fa-solid fa-car text-yellow-400 text-lg"></i>
-        <span class="font-extrabold text-white text-sm tracking-wide">SEGURAUTOS</span>
+      <span class="text-gray-500 font-bold text-lg">&times;</span>
+      <div class="flex items-center gap-2 bg-yellow-900/40 border border-yellow-400/30 px-4 py-2 rounded-xl">
+        <i class="fa-solid fa-car text-yellow-400 text-xl"></i>
+        <span class="font-extrabold text-white text-base tracking-wide">SEGURAUTOS</span>
       </div>
     </div>
     <div class="text-center md:text-right">
-      <h1 class="text-2xl font-extrabold text-white tracking-tight">Estrategia de Contenido & Rodaje</h1>
-      <p class="text-sm text-gray-400">Desarrollado por <span class="text-blue-400 font-semibold">Make Mark</span> para <span class="text-yellow-400 font-semibold">Segurautos</span></p>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Estrategia de Contenido & Rodaje</h1>
+      <p class="text-sm text-gray-400 mt-1">Desarrollado por <span class="text-blue-400 font-semibold">Make Mark</span> para <span class="text-yellow-400 font-semibold">Segurautos</span></p>
     </div>
   </header>
 
-  <!-- FILTROS & BÚSQUEDA -->
+  <!-- CONTENEDOR PRINCIPAL -->
   <main class="max-w-7xl mx-auto space-y-8">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+    
+    <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 glass-card">
       <div class="relative w-full md:w-96">
         <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-        <input type="text" id="searchInput" oninput="filterCards()" placeholder="Buscar guion o palabra clave..." class="w-full pl-11 pr-4 py-2 bg-black/40 border border-white/10 rounded-lg text-sm text-white focus:outline-none focus:border-blue-500">
+        <input type="text" id="searchInput" oninput="filterCards()" placeholder="Buscar guion o palabra clave..." class="w-full pl-11 pr-4 py-2.5 bg-black/50 border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-blue-500 transition">
       </div>
       <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
-        <button onclick="setFilter('all')" id="btn-all" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-white/20 text-white">Todos (10)</button>
-        <button onclick="setFilter('pauta')" id="btn-pauta" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-pauta/10 text-pauta hover:bg-pauta/20 border border-pauta/30">Pauta (5)</button>
-        <button onclick="setFilter('organico')" id="btn-organico" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-organico/10 text-organico hover:bg-organico/20 border border-organico/30">Orgánico (5)</button>
+        <button onclick="setFilter('all')" id="btn-all" class="px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition bg-white/20 text-white shadow-lg">Todos (10)</button>
+        <button onclick="setFilter('pauta')" id="btn-pauta" class="px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition bg-pauta/10 text-pauta hover:bg-pauta/20 border border-pauta/30">Pauta (5)</button>
+        <button onclick="setFilter('organico')" id="btn-organico" class="px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition bg-organico/10 text-organico hover:bg-organico/20 border border-organico/30">Orgánico (5)</button>
       </div>
     </div>
 
     <!-- BANCO GENERAL DE GUIONES -->
-    <section>
-      <div class="flex items-center justify-between mb-4">
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
         <h2 class="text-xl font-bold flex items-center gap-2 text-white">
           <i class="fa-solid fa-layer-group text-blue-400"></i> Banco de Guiones Disponible
         </h2>
-        <span class="text-xs text-gray-400">Arrastra una ficha a las tablas de planificación abajo</span>
+        <span class="text-xs text-gray-400 hidden sm:inline"><i class="fa-solid fa-hand-pointer text-blue-400"></i> Arrastra las fichas a la sección de planificación</span>
       </div>
-      <div id="mainBank" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 drop-zone p-2 rounded-2xl border-2 border-dashed border-white/10" ondrop="drop(event, 'mainBank')" ondragover="allowDrop(event)">
-        <!-- Las cards se generan dinámicamente -->
+      <div id="mainBank" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 drop-zone p-4 rounded-2xl border-2 border-dashed border-white/10 bg-black/20" ondrop="drop(event, 'mainBank')" ondragover="allowDrop(event)">
+        <!-- Las fichas se renderizan dinámicamente con JavaScript -->
       </div>
     </section>
 
-    <!-- TABLAS DE PLANIFICACIÓN POR SESIÓN -->
-    <section class="space-y-4">
-      <h2 class="text-xl font-bold flex items-center gap-2 text-white">
-        <i class="fa-solid fa-calendar-days text-yellow-400"></i> Planificación de Rodaje (Consenso de Equipo)
-      </h2>
+    <!-- PLANIFICACIÓN DE SISIONES (DRAG & DROP) -->
+    <section class="space-y-4 pt-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <h2 class="text-xl font-bold flex items-center gap-2 text-white">
+          <i class="fa-solid fa-calendar-days text-yellow-400"></i> Planificación de Rodaje (Consenso de Equipo)
+        </h2>
+        <button onclick="exportPlan()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition flex items-center gap-2 shadow-lg">
+          <i class="fa-solid fa-download"></i> Exportar Planificación
+        </button>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- PRIMERA SESIÓN -->
+        
+        <!-- COLUMNA: PRIMERA SESIÓN -->
         <div class="glass-card p-5 rounded-2xl border-t-4 border-t-blue-500">
           <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
             <h3 class="font-bold text-lg text-blue-400 flex items-center gap-2">
               <i class="fa-solid fa-film"></i> Primera Sesión
             </h3>
-            <span id="count-sesion1" class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold">0 guiones</span>
+            <span id="count-sesion1" class="text-xs px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">0 guiones</span>
           </div>
-          <div id="sesion1" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/20" ondrop="drop(event, 'sesion1')" ondragover="allowDrop(event)">
-            <p class="text-xs text-center text-gray-500 py-8 pointer-events-none">Arrastra aquí los guiones para la 1ª Sesión</p>
+          <div id="sesion1" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/30" ondrop="drop(event, 'sesion1')" ondragover="allowDrop(event)">
+            <p class="text-xs text-center text-gray-500 py-10 pointer-events-none italic">Arrastra aquí los guiones seleccionados para la 1ª Sesión</p>
           </div>
         </div>
 
-        <!-- SEGUNDA SESIÓN -->
+        <!-- COLUMNA: SEGUNDA SESIÓN -->
         <div class="glass-card p-5 rounded-2xl border-t-4 border-t-purple-500">
           <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
             <h3 class="font-bold text-lg text-purple-400 flex items-center gap-2">
               <i class="fa-solid fa-video"></i> Segunda Sesión
             </h3>
-            <span id="count-sesion2" class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold">0 guiones</span>
+            <span id="count-sesion2" class="text-xs px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">0 guiones</span>
           </div>
-          <div id="sesion2" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/20" ondrop="drop(event, 'sesion2')" ondragover="allowDrop(event)">
-            <p class="text-xs text-center text-gray-500 py-8 pointer-events-none">Arrastra aquí los guiones para la 2ª Sesión</p>
+          <div id="sesion2" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/30" ondrop="drop(event, 'sesion2')" ondragover="allowDrop(event)">
+            <p class="text-xs text-center text-gray-500 py-10 pointer-events-none italic">Arrastra aquí los guiones seleccionados para la 2ª Sesión</p>
           </div>
         </div>
+
       </div>
     </section>
+
   </main>
 
-  <!-- MODAL DE LECTURA AMPLIADA -->
+  <!-- MODAL DE LECTURA DE GUIONES -->
   <div id="scriptModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
-    <div class="glass-card max-w-2xl w-full rounded-2xl p-6 md:p-8 space-y-6 max-h-[90vh] overflow-y-auto border border-white/20">
+    <div class="glass-card max-w-2xl w-full rounded-2xl p-6 md:p-8 space-y-6 max-h-[90vh] overflow-y-auto border border-white/20 shadow-2xl">
       <div class="flex justify-between items-start">
         <div>
-          <span id="modalCategory" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"></span>
+          <span id="modalCategory" class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider"></span>
           <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-2"></h3>
         </div>
-        <button onclick="closeModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+        <button onclick="closeModal()" class="text-gray-400 hover:text-white text-3xl font-light leading-none">&times;</button>
       </div>
       <div class="bg-black/40 p-4 rounded-xl border border-white/10">
-        <p class="text-xs text-gray-400 uppercase font-bold mb-1">Enfoque / Objetivo</p>
-        <p id="modalHook" class="text-sm text-gray-200 italic"></p>
+        <p class="text-xs text-gray-400 uppercase font-bold mb-1"><i class="fa-solid fa-bullseye text-blue-400"></i> Enfoque / Objetivo</p>
+        <p id="modalHook" class="text-sm text-gray-200 italic leading-relaxed"></p>
       </div>
       <div>
-        <p class="text-xs text-gray-400 uppercase font-bold mb-2">Texto Completo para Teleprompter / Lectura</p>
-        <div id="modalBody" class="p-4 bg-black/60 rounded-xl text-gray-200 text-sm leading-relaxed border border-white/5"></div>
+        <p class="text-xs text-gray-400 uppercase font-bold mb-2"><i class="fa-solid fa-align-left text-yellow-400"></i> Texto Completo para Teleprompter / Lectura</p>
+        <div id="modalBody" class="p-4 bg-black/60 rounded-xl text-gray-200 text-sm leading-relaxed border border-white/5 select-all"></div>
       </div>
       <div class="flex justify-end gap-3 pt-4 border-t border-white/10">
-        <button onclick="copyModalText()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition">
+        <button onclick="copyModalText()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition shadow-lg">
           <i class="fa-regular fa-copy"></i> Copiar Texto
         </button>
         <button onclick="closeModal()" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Cerrar</button>
@@ -142,6 +155,7 @@
   </div>
 
   <script>
+    // BASE DE DATOS COMPLETA DE LOS 10 GUIONES
     const guiones = [
       {
         id: "g1", type: "pauta", title: "1. La Fórmula Secreta de Ahorro", hook: "Enfoque: Recetario / Paso a paso de ahorro en 3 pasos con acuerdos de pago y cónyuge.",
@@ -176,7 +190,7 @@
         text: "Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz. Llamó al numeral de asistencia de la aseguradora, llegó la grúa, trasladaron el carro al taller y, por la gravedad de los daños, declararon la pérdida total. El vehículo estaba cotizado en unos 65 millones de pesos y él solo estaba a la espera del correo con el desembolso de la indemnización. Y el correo efectivamente le llegó, pero la respuesta no fue la que esperaba: la aseguradora le negó el pago total de la indemnización. ¿La razón? Identificaron que en el momento del accidente el carro estaba prestando servicio de transporte de pasajeros a través de aplicaciones. ¿Podía la aseguradora negarse a pagar? Lamentablemente sí. Si tu carro está asegurado bajo la modalidad de uso particular o familiar y lo utilizas con fines comerciales o de plataforma, ninguna aseguradora te va a responder ante un siniestro. Para que te cubra, el vehículo debe estar asegurado como utilitario o comercial. Y aquí viene el gran secreto que casi nadie sabe: ¿se puede asegurar un vehículo de placa particular como utilitario o de plataforma? La respuesta es sí, pero no con todas las compañías ni para todos los modelos. Esto depende de cómo se clasifique el riesgo al momento de cotizar y de contar con la asesoría correcta. Si hoy usas tu carro para trabajar en aplicaciones y sufres un choque grave o un hurto teniendo una póliza tradicional, estás corriendo el riesgo de perder todo tu patrimonio. Cúrate en salud, cotiza tu póliza de la forma correcta y asegúrate de estar cubierto de verdad. Escribe la palabra 'cotización' en los comentarios y te mostramos las opciones reales que sí se adaptan a tu vehículo."
       },
       {
-        id: "g9", type: "organico", title: "9. Bogotá en 'Obra Gris' Eterna", hook: "Enfoque: Paciencia y prevención en la infraestructura dilatada.",
+        id: "g9", type: "organico", title: "9. Bogotá en Obra Gris Eterna", hook: "Enfoque: Paciencia y prevención en la infraestructura dilatada.",
         text: "Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna, y aunque a todos nos saca de quicio el trancón, hay que admitir algo que genera mucha polémica: este caos es el costo obligatorio para que la movilidad por fin mejore. El problema no es la promesa del metro o las nuevas troncales, sino el 'mientras tanto' y la forma en que algunas obras se han dilatado hasta desesperar a cualquiera. Lugares como la Avenida 68, el tramo de la Avenida Laureano Gómez en la 191 o las eternas intervenciones en la Calle 72 son el ejemplo perfecto de frentes de obra que parecen no avanzar nunca. Vivimos atrapados entre polisombras, desvíos improvisados y huecos tapados con tierra que no solo nos quitan horas de vida, sino que destruyen la suspensión, deforman las llantas y duplican el riesgo de cualquier choque simple. La ciudad se va a demorar bastante en cambiar, así que lo único que nos queda a los conductores para curarnos en salud es manejar con mucha más malicia, aumentar la distancia de frenado en zonas de construcción y no confiarse de las vías de noche. Paciencia, porque a esta 'obra gris' todavía le queda bastante recorrido."
       },
       {
@@ -187,18 +201,165 @@
 
     let currentFilter = 'all';
 
+    // RENDERIZADO DE FICHAS EN EL BANCO
     function renderCards() {
       const container = document.getElementById('mainBank');
+      if (!container) return;
       container.innerHTML = '';
       guiones.forEach(g => {
         const card = createCardElement(g);
         container.appendChild(card);
       });
+      updateCounts();
     }
 
+    // CREACIÓN ELEMENTO FOTO/CARD DE GUION
     function createCardElement(g) {
       const div = document.createElement('div');
       div.id = g.id;
       div.draggable = true;
       div.ondragstart = (e) => drag(e);
-      div.className = `glass-card p-5 rounded-xl border
+      div.className = `glass-card p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group ${
+        g.type === 'pauta' ? 'card-pauta' : 'card-organico'
+      }`;
+
+      const badgeClass = g.type === 'pauta' ? 'badge-pauta' : 'badge-organico';
+      const labelText = g.type === 'pauta' ? 'PAUTA' : 'ORGÁNICO';
+
+      div.innerHTML = `
+        <div class="flex justify-between items-start mb-3">
+          <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase ${badgeClass}">${labelText}</span>
+          <button onclick="copyScriptText('${g.id}')" class="text-xs text-gray-400 hover:text-white p-1.5 rounded bg-black/40 hover:bg-black/60 border border-white/10 transition" title="Copiar texto">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+        <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-blue-400 transition-colors">${g.title}</h3>
+        <p class="text-xs text-gray-400 mb-4 line-clamp-2">${g.hook}</p>
+        <div class="flex justify-between items-center pt-3 border-t border-white/5 text-xs">
+          <button onclick="openModal('${g.id}')" class="text-blue-400 hover:underline font-bold flex items-center gap-1">
+            <i class="fa-solid fa-expand text-[10px]"></i> Leer Guion
+          </button>
+          <span class="text-[10px] text-gray-500 font-semibold"><i class="fa-solid fa-grip-dots-vertical"></i> Mover</span>
+        </div>
+      `;
+      return div;
+    }
+
+    // EVENTOS DRAG & DROP
+    function allowDrop(ev) { 
+      ev.preventDefault(); 
+      const dropZone = ev.currentTarget;
+      dropZone.classList.add('drag-over');
+    }
+
+    function drag(ev) { 
+      ev.dataTransfer.setData("text", ev.target.id); 
+    }
+
+    function drop(ev, targetId) {
+      ev.preventDefault();
+      const dropZone = document.getElementById(targetId);
+      if (dropZone) dropZone.classList.remove('drag-over');
+
+      const data = ev.dataTransfer.getData("text");
+      const card = document.getElementById(data);
+
+      if (dropZone && card) {
+        const placeholder = dropZone.querySelector('p');
+        if (placeholder) placeholder.remove();
+        dropZone.appendChild(card);
+        updateCounts();
+      }
+    }
+
+    // CONTADOR DE GUIONES PLANIFICADOS
+    function updateCounts() {
+      const s1 = document.getElementById('sesion1').querySelectorAll('.glass-card').length;
+      const s2 = document.getElementById('sesion2').querySelectorAll('.glass-card').length;
+      document.getElementById('count-sesion1').innerText = `${s1} guion${s1 !== 1 ? 'es' : ''}`;
+      document.getElementById('count-sesion2').innerText = `${s2} guion${s2 !== 1 ? 'es' : ''}`;
+    }
+
+    // VENTANA MODAL DE LECTURA AMPLIADA
+    function openModal(id) {
+      const g = guiones.find(item => item.id === id);
+      if (!g) return;
+
+      const modalCategory = document.getElementById('modalCategory');
+      modalCategory.innerText = g.type === 'pauta' ? 'PAUTA' : 'ORGÁNICO';
+      modalCategory.className = `px-3 py-1 rounded-full text-xs font-extrabold uppercase ${
+        g.type === 'pauta' ? 'badge-pauta' : 'badge-organico'
+      }`;
+
+      document.getElementById('modalTitle').innerText = g.title;
+      document.getElementById('modalHook').innerText = g.hook;
+      document.getElementById('modalBody').innerText = g.text;
+      document.getElementById('scriptModal').classList.remove('hidden');
+      document.getElementById('scriptModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('scriptModal').classList.add('hidden');
+      document.getElementById('scriptModal').classList.remove('flex');
+    }
+
+    function copyModalText() {
+      const text = document.getElementById('modalBody').innerText;
+      navigator.clipboard.writeText(text);
+      alert('¡Guion copiado al portapapeles!');
+    }
+
+    function copyScriptText(id) {
+      const g = guiones.find(item => item.id === id);
+      if (g) {
+        navigator.clipboard.writeText(g.text);
+        alert(`¡Texto de "${g.title}" copiado al portapapeles!`);
+      }
+    }
+
+    // FILTRADO DINÁMICO
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('[id^="btn-"]').forEach(btn => btn.className = btn.className.replace('bg-white/20', 'bg-white/5'));
+      document.getElementById(`btn-${filter}`).className += ' bg-white/20';
+      filterCards();
+    }
+
+    function filterCards() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      guiones.forEach(g => {
+        const card = document.getElementById(g.id);
+        if (!card) return;
+        const matchesSearch = g.title.toLowerCase().includes(query) || g.text.toLowerCase().includes(query) || g.hook.toLowerCase().includes(query);
+        const matchesFilter = currentFilter === 'all' || g.type === currentFilter;
+
+        if (matchesSearch && matchesFilter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // EXPORTAR PLANIFICACIÓN EN RESUMEN DE TEXTO
+    function exportPlan() {
+      const s1Cards = Array.from(document.getElementById('sesion1').querySelectorAll('.glass-card')).map(c => c.querySelector('h3').innerText);
+      const s2Cards = Array.from(document.getElementById('sesion2').querySelectorAll('.glass-card')).map(c => c.querySelector('h3').innerText);
+
+      let report = "PLANIFICACIÓN DE RODAJE - SEGURAUTOS & MAKE MARK\n\n";
+      report += "--- PRIMERA SESIÓN ---\n";
+      report += s1Cards.length > 0 ? s1Cards.map(t => `- ${t}`).join('\n') : "Ningún guion asignado.";
+      report += "\n\n--- SEGUNDA SESIÓN ---\n";
+      report += s2Cards.length > 0 ? s2Cards.map(t => `- ${t}`).join('\n') : "Ningún guion asignado.";
+
+      navigator.clipboard.writeText(report);
+      alert("¡Resumen de la planificación copiado al portapapeles!\nPuedes pegarlo directamente en WhatsApp o un correo.");
+    }
+
+    // INICIALIZACIÓN AL CARGAR LA PÁGINA
+    window.onload = function() {
+      renderCards();
+    };
+  </script>
+</body>
+</html>
