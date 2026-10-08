@@ -1,324 +1,314 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurautos & Make Mark | Banco de Guiones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+          colors: {
+            pauta: { DEFAULT: '#FFD700', text: '#B88600', dark: '#1A1600', border: 'rgba(255, 215, 0, 0.4)' },
+            organico: { DEFAULT: '#00F2FE', text: '#00A3AC', dark: '#001A1C', border: 'rgba(0, 242, 254, 0.4)' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #07090E; color: #F3F4F6; min-height: 100vh; }
+    .glass-card { background: rgba(18, 24, 38, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .card-pauta { border-color: rgba(255, 215, 0, 0.3); background: linear-gradient(145deg, rgba(255, 215, 0, 0.05) 0%, rgba(18, 24, 38, 0.8) 100%); }
+    .card-pauta:hover { border-color: #FFD700; box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.3); }
+    .card-organico { border-color: rgba(0, 242, 254, 0.3); background: linear-gradient(145deg, rgba(0, 242, 254, 0.05) 0%, rgba(18, 24, 38, 0.8) 100%); }
+    .card-organico:hover { border-color: #00F2FE; box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.3); }
+    .drop-zone { min-height: 180px; transition: all 0.2s ease; }
+    .drop-zone.drag-over { background: rgba(255, 255, 255, 0.05); border-color: #3B82F6; }
   </style>
 </head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="es"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Segurautos &amp; Make Mark | Banco de Guiones&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>tailwind.config = {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>theme: {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>extend: {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },</p>
-<p class="p1"><span class="Apple-converted-space">          </span>colors: {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>pauta: { DEFAULT: '#FFD700', text: '#B88600', dark: '#1A1600', border: 'rgba(255, 215, 0, 0.4)' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>organico: { DEFAULT: '#00F2FE', text: '#00A3AC', dark: '#001A1C', border: 'rgba(0, 242, 254, 0.4)' }</p>
-<p class="p1"><span class="Apple-converted-space">          </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body { background: #07090E; color: #F3F4F6; min-height: 100vh; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.glass-card { background: rgba(18, 24, 38, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card-pauta { border-color: rgba(255, 215, 0, 0.3); background: linear-gradient(145deg, rgba(255, 215, 0, 0.05) 0%, rgba(18, 24, 38, 0.8) 100%); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card-pauta:hover { border-color: #FFD700; box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.3); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card-organico { border-color: rgba(0, 242, 254, 0.3); background: linear-gradient(145deg, rgba(0, 242, 254, 0.05) 0%, rgba(18, 24, 38, 0.8) 100%); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card-organico:hover { border-color: #00F2FE; box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.3); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.drop-zone { min-height: 180px; transition: all 0.2s ease; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.drop-zone.drag-over { background: rgba(255, 255, 255, 0.05); border-color: #3B82F6; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body class="p-4 md:p-8"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- HEADER BRANDING --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="max-w-7xl mx-auto mb-8 p-6 glass-card rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="flex items-center gap-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://i.ibb.co/L5w1D1z/Logo-redondeado.png" alt="Make Mark" class="h-14 w-14 rounded-full border-2 border-white/20 shadow-lg object-contain bg-white"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="h-8 w-px bg-white/20 hidden sm:block"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://i.ibb.co/qD842G6/Segurautos-500px.png" alt="Segurautos" class="h-10 object-contain brightness-0 invert"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="text-center md:text-right"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1 class="text-2xl font-extrabold text-white tracking-tight"&gt;Estrategia de Contenido &amp; Rodaje&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="text-sm text-gray-400"&gt;Desarrollado por &lt;span class="text-blue-400 font-semibold"&gt;Make Mark&lt;/span&gt; para &lt;span class="text-yellow-400 font-semibold"&gt;Segurautos&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- FILTROS &amp; BÚSQUEDA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="max-w-7xl mx-auto space-y-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="flex flex-col md:flex-row justify-between items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="relative w-full md:w-96"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="searchInput" oninput="filterCards()" placeholder="Buscar guion o palabra clave..." class="w-full pl-11 pr-4 py-2 bg-black/40 border border-white/10 rounded-lg text-sm text-white focus:outline-none focus:border-blue-500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="setFilter('all')" id="btn-all" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-white/20 text-white"&gt;Todos (10)&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="setFilter('pauta')" id="btn-pauta" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-pauta/10 text-pauta hover:bg-pauta/20 border border-pauta/30"&gt;Pauta (5)&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="setFilter('organico')" id="btn-organico" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-organico/10 text-organico hover:bg-organico/20 border border-organico/30"&gt;Orgánico (5)&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- BANCO GENERAL DE GUIONES --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex items-center justify-between mb-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="text-xl font-bold flex items-center gap-2 text-white"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;i class="fa-solid fa-layer-group text-blue-400"&gt;&lt;/i&gt; Banco de Guiones Disponible</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="text-xs text-gray-400"&gt;Arrastra una ficha a las tablas de planificación abajo&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="mainBank" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 drop-zone p-2 rounded-2xl border-2 border-dashed border-white/10" ondrop="drop(event, 'mainBank')" ondragover="allowDrop(event)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Las cards se generan dinámicamente --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- TABLAS DE PLANIFICACIÓN POR SESIÓN --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="space-y-4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="text-xl font-bold flex items-center gap-2 text-white"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;i class="fa-solid fa-calendar-days text-yellow-400"&gt;&lt;/i&gt; Planificación de Rodaje (Consenso de Equipo)</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- PRIMERA SESIÓN --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="glass-card p-5 rounded-2xl border-t-4 border-t-blue-500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-bold text-lg text-blue-400 flex items-center gap-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;i class="fa-solid fa-film"&gt;&lt;/i&gt; Primera Sesión</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="count-sesion1" class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold"&gt;0 guiones&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="sesion1" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/20" ondrop="drop(event, 'sesion1')" ondragover="allowDrop(event)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-xs text-center text-gray-500 py-8 pointer-events-none"&gt;Arrastra aquí los guiones para la 1ª Sesión&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SEGUNDA SESIÓN --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="glass-card p-5 rounded-2xl border-t-4 border-t-purple-500"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-bold text-lg text-purple-400 flex items-center gap-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;i class="fa-solid fa-video"&gt;&lt;/i&gt; Segunda Sesión</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="count-sesion2" class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold"&gt;0 guiones&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div id="sesion2" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/20" ondrop="drop(event, 'sesion2')" ondragover="allowDrop(event)"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-xs text-center text-gray-500 py-8 pointer-events-none"&gt;Arrastra aquí los guiones para la 2ª Sesión&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- MODAL DE LECTURA AMPLIADA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="scriptModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 z-50"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="glass-card max-w-2xl w-full rounded-2xl p-6 md:p-8 space-y-6 max-h-[90vh] overflow-y-auto border border-white/20"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex justify-between items-start"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span id="modalCategory" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-2"&gt;&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="closeModal()" class="text-gray-400 hover:text-white text-2xl"&gt;&amp;times;&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bg-black/40 p-4 rounded-xl border border-white/10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-xs text-gray-400 uppercase font-bold mb-1"&gt;Enfoque / Objetivo&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p id="modalHook" class="text-sm text-gray-200 italic"&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-xs text-gray-400 uppercase font-bold mb-2"&gt;Texto Completo para Teleprompter / Lectura&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="modalBody" class="p-4 bg-black/60 rounded-xl text-gray-200 text-sm leading-relaxed border border-white/5"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex justify-end gap-3 pt-4 border-t border-white/10"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="copyModalText()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;i class="fa-regular fa-copy"&gt;&lt;/i&gt; Copiar Texto</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="closeModal()" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition"&gt;Cerrar&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const guiones = [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g1", type: "pauta", title: "1. La Fórmula Secreta de Ahorro", hook: "Enfoque: Recetario / Paso a paso de ahorro en 3 pasos con acuerdos de pago y cónyuge.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Hay una forma muy sencilla de ahorrar en tu póliza Todo Riesgo sin dejar de cumplir todos los requisitos de endoso que te exige el banco, y estos son los 3 pasos para lograrlo. Paso 1: Revisa las aseguradoras que cuentan con acuerdos de pago directo para diferir tus cuotas sin pagar intereses adicionales. Paso 2: Solicita tu descuento por cónyuge o grupo familiar. Pocas personas lo saben, pero muchas compañías bajan el valor solo por esta condición. Y el paso más importante, el Paso 3: No te quedes con una sola opción. En Segurautos comparamos tu vehículo con más de 14 aseguradoras del país al mismo tiempo para encontrarte la tarifa más baja garantizando que la póliza cumpla al 100% con los requerimientos de tu banco. Hacer este proceso con nosotros toma menos de 2 minutos. Haz clic aquí abajo, ingresa los datos de tu vehículo y te enviamos la comparativa de inmediato."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g2", type: "pauta", title: "2. ¡Que No Te Engañen!", hook: "Enfoque: Derecho de elección garantizado por la Superintendencia Financiera.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "¡Que no te engañen en el concesionario ni en el banco! Decirte que estás OBLIGADO a comprar la póliza Todo Riesgo con ellos para que te desembolsen el crédito o te dejen sacar el carro es una mentira total. La Superintendencia Financiera te protege y exige que puedas elegir libremente la aseguradora que mejor te convenga en precio, coberturas y servicio. No regales tu dinero pagando pólizas infladas por pura desinformación. Antes de firmar cualquier cosa o sacar tu vehículo, haz valer tu derecho: en Segurautos tomamos los requisitos de tu crédito y los cotizamos con más de 14 aseguradoras al mismo tiempo para garantizarte la opción más económica que cumple al 100% con lo que pide el banco. Haz clic abajo, cotiza gratis en menos de 2 minutos y no te dejes meter el dedo en la boca."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g3", type: "pauta", title: "3. El Secreto Antes de Sacar el Carro", hook: "Enfoque: Historia orgánica para evitar presión en el concesionario.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Si estás a punto de sacar carro o te van a desembolsar un crédito, ten muchísimo cuidado con esto porque a casi todo el mundo se la aplican. En el concesionario o en el banco muchas veces te dicen que para poder entregarte el carro o desembolsar la plata, tienes que comprar la póliza Todo Riesgo obligatoriamente con la aseguradora que ellos te ofrecen. Y eso es completamente falso. Por norma de la Superintendencia Financiera tú tienes todo el derecho de elegir la aseguradora que a ti te dé la gana, la que mejor precio te dé o la que mejores coberturas tenga, siempre y cuando cumpla los requisitos de endoso del banco. No te dejes presionar ni pagues de más por afán. Antes de firmar nada, cotiza por tu cuenta. Por ejemplo en Segurautos te comparan esa misma póliza con más de 14 aseguradoras al tiempo para ver cuál te sale más barata y que cumpla exactamente lo que te exige el banco. Cotiza primero, compara y no regales tu plata."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g4", type: "pauta", title: "4. No Renueves en Automático", hook: "Enfoque: Vencimientos y renovación como oportunidad de ahorro.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Si tu póliza Todo Riesgo está a punto de vencerse, no cometas el error que comete la mayoría: renovar en automático sin revisar. Esos días previos al vencimiento son literalmente la mejor oportunidad que tienes para conseguir un precio mucho más bajo, mejorar coberturas, tener mejor servicio e incluso contar con un doble respaldo para tu carro. La gente por costumbre termina pagando lo mismo o más caro cada año con la misma compañía por no darse el trabajo de comparar. Y es facilísimo: en Segurautos cotizamos tu renovación al mismo tiempo con las mejores aseguradoras del país, más de 14 opciones en total, garantizando que no pierdas tus beneficios y encuentres la tarifa más económica del mercado. Si ya te llegó la carta o la llamada de renovación, no firmes ni pagues todavía. Toca el botón de abajo, déjanos los datos de tu vehículo y te mostramos en 2 minutos cuánto te puedes ahorrar este año."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g5", type: "pauta", title: "5. Alerta Camioneros y Pesados", hook: "Enfoque: Reducción de tarifas en carga y vehículos pesados.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Buenas noticias para los camioneros y propietarios de vehículos pesados: el costo de los seguros para transporte pesado bajó y las opciones que tienes a tu disposición en este momento son las mejores del mercado. Si estás pagando un seguro demasiado costoso o se te avecina la renovación, este es el momento exacto para revisar. Cuando cotizas con una de nuestras gestoras en Segurautos, nos encargamos de comparar entre las mejores aseguradoras del país para hacer todo lo posible por mejorar el precio de tu seguro actual, entregándote exactamente las coberturas que necesitas para rodar y circular con total tranquilidad por todo el territorio nacional. No renueves ni asegures a ciegas pagando de más. Toca el botón de abajo, habla directamente con una de nuestras gestoras especializadas y descubre de inmediato cuánto te vas a ahorrar en la póliza de tu vehículo pesado."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g6", type: "organico", title: "6. El Cobro por Daños en un Bache", hook: "Enfoque: Paso a paso legal ante daños por huecos con el IDU y 123.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Si vas manejando, caes en un hueco feo y se te rompe un rin, se te estalla una llanta o se te daña la suspensión, no te muevas del sitio ni te quedes solo con la rabia. Aunque muy pocos lo hacen, tú sí puedes hacer que la alcaldía o el Estado te paguen hasta el último peso del arreglo, pero debes seguir este paso a paso en los primeros 10 minutos. Lo primero es no mover el carro por nada del mundo. Saca el celular y tómale fotos y video al hueco donde se vea la profundidad, la falta de señalización y la dirección exacta. Lo segundo es fotografiar detalladamente el daño de tu carro ahí mismo. Lo tercero y más importante: llama de inmediato a la línea 123 y pide a la Policía de Tránsito para que levanten el croquis o informe oficial del accidente por mal estado de la vía, porque sin esa prueba reina no te van a responder. Y cuarto: con las fotos, la factura del taller y ese reporte oficial, radicas una reclamación formal a través de la plataforma Bogotá Te Escucha dirigida al IDU o a la Alcaldía Local si el hecho fue en una vía de barrio. Guarda este video, compártelo con quien maneje todos los días en la ciudad y cúrate en salud."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g7", type: "organico", title: "7. ¿Por Qué Son Tan Caros los Parqueaderos?", hook: "Enfoque: Normativa de tarifas por minuto y responsabilidad obligatoria.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran por dejar el carro solo un momento y entender si esto que hacen es legal o si nos están robando de frente. Para que te hagas una idea, dejar el carro aquí un par de horas te puede costar prácticamente lo mismo que un almuerzo o un día de trabajo. Pero la gran pregunta es: ¿es legal que cobren tanto? La respuesta es sí. En Bogotá, las tarifas no son un invento del dueño del parqueadero, están reguladas por decreto según la zona, si el parqueadero es subterráneo, en estructura o a nivel de piso, y el tipo de piso que tiene. Entre más transitada la zona y mejor la infraestructura, más alto es el tope legal por minuto. Pero ojo a esto para que te cures en salud: aunque te cobren una tarifa altísima, lo que jamás es legal es que se laven las manos con el letrero de 'no nos hacemos responsables por daños o robos'. Por ley, esa tarifa alta que estás pagando incluye obligatoriamente una custodia y una póliza que los obliga a responder por rayones, golpes o pérdidas dentro del establecimiento. Si vas a pagar caro por parquear, exige que te entreguen el recibo con la hora exacta, revisa la tarifa por minuto fijada a la vista y reporta cualquier novedad antes de sacar el carro del lugar. Guarda este video antes de salir este fin de semana y compártelo con el amigo que siempre reniega de los parqueaderos."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g8", type: "organico", title: "8. La Trampa de las Aplicaciones", hook: "Enfoque: Asegurar como utilitario para evitar la negación de indemnizaciones.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz. Llamó al numeral de asistencia de la aseguradora, llegó la grúa, trasladaron el carro al taller y, por la gravedad de los daños, declararon la pérdida total. El vehículo estaba cotizado en unos 65 millones de pesos y él solo estaba a la espera del correo con el desembolso de la indemnización. Y el correo efectivamente le llegó, pero la respuesta no fue la que esperaba: la aseguradora le negó el pago total de la indemnización. ¿La razón? Identificaron que en el momento del accidente el carro estaba prestando servicio de transporte de pasajeros a través de aplicaciones. ¿Podía la aseguradora negarse a pagar? Lamentablemente sí. Si tu carro está asegurado bajo la modalidad de uso particular o familiar y lo utilizas con fines comerciales o de plataforma, ninguna aseguradora te va a responder ante un siniestro. Para que te cubra, el vehículo debe estar asegurado como utilitario o comercial. Y aquí viene el gran secreto que casi nadie sabe: ¿se puede asegurar un vehículo de placa particular como utilitario o de plataforma? La respuesta es sí, pero no con todas las compañías ni para todos los modelos. Esto depende de cómo se clasifique el riesgo al momento de cotizar y de contar con la asesoría correcta. Si hoy usas tu carro para trabajar en aplicaciones y sufres un choque grave o un hurto teniendo una póliza tradicional, estás corriendo el riesgo de perder todo tu patrimonio. Cúrate en salud, cotiza tu póliza de la forma correcta y asegúrate de estar cubierto de verdad. Escribe la palabra 'cotización' en los comentarios y te mostramos las opciones reales que sí se adaptan a tu vehículo."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g9", type: "organico", title: "9. Bogotá en 'Obra Gris' Eterna", hook: "Enfoque: Paciencia y prevención en la infraestructura dilatada.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna, y aunque a todos nos saca de quicio el trancón, hay que admitir algo que genera mucha polémica: este caos es el costo obligatorio para que la movilidad por fin mejore. El problema no es la promesa del metro o las nuevas troncales, sino el 'mientras tanto' y la forma en que algunas obras se han dilatado hasta desesperar a cualquiera. Lugares como la Avenida 68, el tramo de la Avenida Laureano Gómez en la 191 o las eternas intervenciones en la Calle 72 son el ejemplo perfecto de frentes de obra que parecen no avanzar nunca. Vivimos atrapados entre polisombras, desvíos improvisados y huecos tapados con tierra que no solo nos quitan horas de vida, sino que destruyen la suspensión, deforman las llantas y duplican el riesgo de cualquier choque simple. La ciudad se va a demorar bastante en cambiar, así que lo único que nos queda a los conductores para curarnos en salud es manejar con mucha más malicia, aumentar la distancia de frenado en zonas de construcción y no confiarse de las vías de noche. Paciencia, porque a esta 'obra gris' todavía le queda bastante recorrido."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>id: "g10", type: "organico", title: "10. 3 Mitos de Manejar un Eléctrico", hook: "Enfoque: Cuidado de grúa, paso de corriente y lavado de capó.",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text: "Si tienes o estás pensando en comprar un carro eléctrico, hay tres secretos técnicos que tienes que saber para curarte en salud y no tirarte la garantía o el motor por puro desconocimiento. El primero es la grúa: un eléctrico jamás se debe remolcar arrastrado como un carro térmico normal. Al rodar las ruedas sin el sistema activo, los motores generan energía que no tiene a dónde ir y pueden sobrecalentar o fundir el sistema inversor. Siempre debe subirse completo sobre una grúa de planchón o rampa especial donde las cuatro ruedas queden totalmente inmóviles. El segundo punto son los famosos iniciadores: si te piden 'iniciar' o pasarle corriente a otro carro convencional que se quedó sin batería, no lo hagas. La batería de 12 voltios de un eléctrico está diseñada para gestionar la electrónica interna, no para soportar el pico de arranque de un motor a gasolina; intentar dar un 'iniciador' puede generar un pico de voltaje y achicharrar los módulos electrónicos de tu carro. Y el tercero es el lavado de la zona del capó: por costumbre, muchos llevan el carro al autolavado y dejan que le metan manguera a presión al compartimento delantero. Aunque vienen aislados, el agua a alta presión en los conectores de alto voltaje o sensores de corriente puede generar sulfatación, cortocircuitos o bloqueos por aislamiento. Cuidar un eléctrico es sencillo, pero requiere cambiar los chips de la conducción tradicional."</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>let currentFilter = 'all';</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function renderCards() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const container = document.getElementById('mainBank');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>container.innerHTML = '';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>guiones.forEach(g =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const card = createCardElement(g);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>container.appendChild(card);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function createCardElement(g) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const div = document.createElement('div');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>div.id = g.id;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>div.draggable = true;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>div.ondragstart = (e) =&gt; drag(e);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>div.className = `glass-card p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group ${</p>
-<p class="p1"><span class="Apple-converted-space">        </span>g.type === 'pauta' ? 'card-pauta' : 'card-organico'</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const badgeColor = g.type === 'pauta' ? 'bg-pauta/20 text-pauta border-pauta/30' : 'bg-organico/20 text-organico border-organico/30';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const labelText = g.type === 'pauta' ? 'PAUTA' : 'ORGÁNICO';</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>div.innerHTML = `</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex justify-between items-start mb-3"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase border ${badgeColor}"&gt;${labelText}&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onclick="copyScriptText('${g.id}')" class="text-xs text-gray-400 hover:text-white p-1 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fa-regular fa-copy"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="font-extrabold text-white text-base mb-2 group-hover:text-blue-400 transition-colors"&gt;${g.title}&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-xs text-gray-400 mb-4 line-clamp-2"&gt;${g.hook}&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex justify-between items-center pt-3 border-t border-white/5 text-xs"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onclick="openModal('${g.id}')" class="text-blue-400 hover:underline font-bold flex items-center gap-1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;i class="fa-solid fa-expand text-[10px]"&gt;&lt;/i&gt; Leer Guion</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-[10px] text-gray-500"&gt;&lt;i class="fa-solid fa-grip-dots-vertical"&gt;&lt;/i&gt; Mover&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>return div;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function allowDrop(ev) { ev.preventDefault(); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function drop(ev, targetId) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>ev.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const data = ev.dataTransfer.getData("text");</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const card = document.getElementById(data);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const target = document.getElementById(targetId);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (target) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const placeholder = target.querySelector('p');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (placeholder) placeholder.remove();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>target.appendChild(card);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>updateCounts();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function updateCounts() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('count-sesion1').innerText = `${document.getElementById('sesion1').querySelectorAll('.glass-card').length} guiones`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('count-sesion2').innerText = `${document.getElementById('sesion2').querySelectorAll('.glass-card').length} guiones`;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function openModal(id) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const g = guiones.find(item =&gt; item.id === id);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (!g) return;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const modalCategory = document.getElementById('modalCategory');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>modalCategory.innerText = g.type === 'pauta' ? 'PAUTA' : 'ORGÁNICO';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>modalCategory.className = `px-3 py-1 rounded-full text-xs font-bold uppercase ${</p>
-<p class="p1"><span class="Apple-converted-space">        </span>g.type === 'pauta' ? 'bg-pauta/20 text-pauta border border-pauta/30' : 'bg-organico/20 text-organico border border-organico/30'</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('modalTitle').innerText = g.title;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('modalHook').innerText = g.hook;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('modalBody').innerText = g.text;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('scriptModal').classList.remove('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('scriptModal').classList.add('flex');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function closeModal() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('scriptModal').classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('scriptModal').classList.remove('flex');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function copyModalText() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const text = document.getElementById('modalBody').innerText;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>navigator.clipboard.writeText(text);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>alert('¡Guion copiado al portapapeles!');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function copyScriptText(id) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const g = guiones.find(item =&gt; item.id === id);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (g) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>navigator.clipboard.writeText(g.text);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>alert(`¡Texto de "${g.title}" copiado!`);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function setFilter(filter) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>currentFilter = filter;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.querySelectorAll('[id^="btn-"]').forEach(btn =&gt; btn.className = btn.className.replace('bg-white/20', 'bg-white/5'));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById(`btn-${filter}`).className += ' bg-white/20';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>filterCards();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function filterCards() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const query = document.getElementById('searchInput').value.toLowerCase();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>guiones.forEach(g =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const card = document.getElementById(g.id);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (!card) return;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const matchesSearch = g.title.toLowerCase().includes(query) || g.text.toLowerCase().includes(query) || g.hook.toLowerCase().includes(query);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const matchesFilter = currentFilter === 'all' || g.type === currentFilter;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (matchesSearch &amp;&amp; matchesFilter) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>card.classList.remove('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>card.classList.add('hidden');</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('DOMContentLoaded', renderCards);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<body class="p-4 md:p-8">
+
+  <!-- HEADER BRANDING -->
+  <header class="max-w-7xl mx-auto mb-8 p-6 glass-card rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 border-b border-white/10">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 bg-blue-900/40 border border-blue-400/30 px-3 py-1.5 rounded-xl">
+        <i class="fa-solid fa-bullseye text-blue-400 text-lg"></i>
+        <span class="font-extrabold text-white text-sm tracking-wide">MAKE MARK</span>
+      </div>
+      <span class="text-gray-500 font-bold">&times;</span>
+      <div class="flex items-center gap-2 bg-yellow-900/40 border border-yellow-400/30 px-3 py-1.5 rounded-xl">
+        <i class="fa-solid fa-car text-yellow-400 text-lg"></i>
+        <span class="font-extrabold text-white text-sm tracking-wide">SEGURAUTOS</span>
+      </div>
+    </div>
+    <div class="text-center md:text-right">
+      <h1 class="text-2xl font-extrabold text-white tracking-tight">Estrategia de Contenido & Rodaje</h1>
+      <p class="text-sm text-gray-400">Desarrollado por <span class="text-blue-400 font-semibold">Make Mark</span> para <span class="text-yellow-400 font-semibold">Segurautos</span></p>
+    </div>
+  </header>
+
+  <!-- FILTROS & BÚSQUEDA -->
+  <main class="max-w-7xl mx-auto space-y-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+      <div class="relative w-full md:w-96">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        <input type="text" id="searchInput" oninput="filterCards()" placeholder="Buscar guion o palabra clave..." class="w-full pl-11 pr-4 py-2 bg-black/40 border border-white/10 rounded-lg text-sm text-white focus:outline-none focus:border-blue-500">
+      </div>
+      <div class="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+        <button onclick="setFilter('all')" id="btn-all" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-white/20 text-white">Todos (10)</button>
+        <button onclick="setFilter('pauta')" id="btn-pauta" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-pauta/10 text-pauta hover:bg-pauta/20 border border-pauta/30">Pauta (5)</button>
+        <button onclick="setFilter('organico')" id="btn-organico" class="px-4 py-2 rounded-lg text-xs font-bold uppercase transition bg-organico/10 text-organico hover:bg-organico/20 border border-organico/30">Orgánico (5)</button>
+      </div>
+    </div>
+
+    <!-- BANCO GENERAL DE GUIONES -->
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold flex items-center gap-2 text-white">
+          <i class="fa-solid fa-layer-group text-blue-400"></i> Banco de Guiones Disponible
+        </h2>
+        <span class="text-xs text-gray-400">Arrastra una ficha a las tablas de planificación abajo</span>
+      </div>
+      <div id="mainBank" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 drop-zone p-2 rounded-2xl border-2 border-dashed border-white/10" ondrop="drop(event, 'mainBank')" ondragover="allowDrop(event)">
+        <!-- Las cards se generan dinámicamente -->
+      </div>
+    </section>
+
+    <!-- TABLAS DE PLANIFICACIÓN POR SESIÓN -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-bold flex items-center gap-2 text-white">
+        <i class="fa-solid fa-calendar-days text-yellow-400"></i> Planificación de Rodaje (Consenso de Equipo)
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- PRIMERA SESIÓN -->
+        <div class="glass-card p-5 rounded-2xl border-t-4 border-t-blue-500">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+            <h3 class="font-bold text-lg text-blue-400 flex items-center gap-2">
+              <i class="fa-solid fa-film"></i> Primera Sesión
+            </h3>
+            <span id="count-sesion1" class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold">0 guiones</span>
+          </div>
+          <div id="sesion1" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/20" ondrop="drop(event, 'sesion1')" ondragover="allowDrop(event)">
+            <p class="text-xs text-center text-gray-500 py-8 pointer-events-none">Arrastra aquí los guiones para la 1ª Sesión</p>
+          </div>
+        </div>
+
+        <!-- SEGUNDA SESIÓN -->
+        <div class="glass-card p-5 rounded-2xl border-t-4 border-t-purple-500">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+            <h3 class="font-bold text-lg text-purple-400 flex items-center gap-2">
+              <i class="fa-solid fa-video"></i> Segunda Sesión
+            </h3>
+            <span id="count-sesion2" class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold">0 guiones</span>
+          </div>
+          <div id="sesion2" class="drop-zone space-y-4 p-3 rounded-xl border border-white/5 bg-black/20" ondrop="drop(event, 'sesion2')" ondragover="allowDrop(event)">
+            <p class="text-xs text-center text-gray-500 py-8 pointer-events-none">Arrastra aquí los guiones para la 2ª Sesión</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE LECTURA AMPLIADA -->
+  <div id="scriptModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 z-50">
+    <div class="glass-card max-w-2xl w-full rounded-2xl p-6 md:p-8 space-y-6 max-h-[90vh] overflow-y-auto border border-white/20">
+      <div class="flex justify-between items-start">
+        <div>
+          <span id="modalCategory" class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"></span>
+          <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-2"></h3>
+        </div>
+        <button onclick="closeModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+      </div>
+      <div class="bg-black/40 p-4 rounded-xl border border-white/10">
+        <p class="text-xs text-gray-400 uppercase font-bold mb-1">Enfoque / Objetivo</p>
+        <p id="modalHook" class="text-sm text-gray-200 italic"></p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-400 uppercase font-bold mb-2">Texto Completo para Teleprompter / Lectura</p>
+        <div id="modalBody" class="p-4 bg-black/60 rounded-xl text-gray-200 text-sm leading-relaxed border border-white/5"></div>
+      </div>
+      <div class="flex justify-end gap-3 pt-4 border-t border-white/10">
+        <button onclick="copyModalText()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition">
+          <i class="fa-regular fa-copy"></i> Copiar Texto
+        </button>
+        <button onclick="closeModal()" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const guiones = [
+      {
+        id: "g1", type: "pauta", title: "1. La Fórmula Secreta de Ahorro", hook: "Enfoque: Recetario / Paso a paso de ahorro en 3 pasos con acuerdos de pago y cónyuge.",
+        text: "Hay una forma muy sencilla de ahorrar en tu póliza Todo Riesgo sin dejar de cumplir todos los requisitos de endoso que te exige el banco, y estos son los 3 pasos para lograrlo. Paso 1: Revisa las aseguradoras que cuentan con acuerdos de pago directo para diferir tus cuotas sin pagar intereses adicionales. Paso 2: Solicita tu descuento por cónyuge o grupo familiar. Pocas personas lo saben, pero muchas compañías bajan el valor solo por esta condición. Y el paso más importante, el Paso 3: No te quedes con una sola opción. En Segurautos comparamos tu vehículo con más de 14 aseguradoras del país al mismo tiempo para encontrarte la tarifa más baja garantizando que la póliza cumpla al 100% con los requerimientos de tu banco. Hacer este proceso con nosotros toma menos de 2 minutos. Haz clic aquí abajo, ingresa los datos de tu vehículo y te enviamos la comparativa de inmediato."
+      },
+      {
+        id: "g2", type: "pauta", title: "2. ¡Que No Te Engañen!", hook: "Enfoque: Derecho de elección garantizado por la Superintendencia Financiera.",
+        text: "¡Que no te engañen en el concesionario ni en el banco! Decirte que estás OBLIGADO a comprar la póliza Todo Riesgo con ellos para que te desembolsen el crédito o te dejen sacar el carro es una mentira total. La Superintendencia Financiera te protege y exige que puedas elegir libremente la aseguradora que mejor te convenga en precio, coberturas y servicio. No regales tu dinero pagando pólizas infladas por pura desinformación. Antes de firmar cualquier cosa o sacar tu vehículo, haz valer tu derecho: en Segurautos tomamos los requisitos de tu crédito y los cotizamos con más de 14 aseguradoras al mismo tiempo para garantizarte la opción más económica que cumple al 100% con lo que pide el banco. Haz clic abajo, cotiza gratis en menos de 2 minutos y no te dejes meter el dedo en la boca."
+      },
+      {
+        id: "g3", type: "pauta", title: "3. El Secreto Antes de Sacar el Carro", hook: "Enfoque: Historia orgánica para evitar presión en el concesionario.",
+        text: "Si estás a punto de sacar carro o te van a desembolsar un crédito, ten muchísimo cuidado con esto porque a casi todo el mundo se la aplican. En el concesionario o en el banco muchas veces te dicen que para poder entregarte el carro o desembolsar la plata, tienes que comprar la póliza Todo Riesgo obligatoriamente con la aseguradora que ellos te ofrecen. Y eso es completamente falso. Por norma de la Superintendencia Financiera tú tienes todo el derecho de elegir la aseguradora que a ti te dé la gana, la que mejor precio te dé o la que mejores coberturas tenga, siempre y cuando cumpla los requisitos de endoso del banco. No te dejes presionar ni pagues de más por afán. Antes de firmar nada, cotiza por tu cuenta. Por ejemplo en Segurautos te comparan esa misma póliza con más de 14 aseguradoras al tiempo para ver cuál te sale más barata y que cumpla exactamente lo que te exige el banco. Cotiza primero, compara y no regales tu plata."
+      },
+      {
+        id: "g4", type: "pauta", title: "4. No Renueves en Automático", hook: "Enfoque: Vencimientos y renovación como oportunidad de ahorro.",
+        text: "Si tu póliza Todo Riesgo está a punto de vencerse, no cometas el error que comete la mayoría: renovar en automático sin revisar. Esos días previos al vencimiento son literalmente la mejor oportunidad que tienes para conseguir un precio mucho más bajo, mejorar coberturas, tener mejor servicio e incluso contar con un doble respaldo para tu carro. La gente por costumbre termina pagando lo mismo o más caro cada año con la misma compañía por no darse el trabajo de comparar. Y es facilísimo: en Segurautos cotizamos tu renovación al mismo tiempo con las mejores aseguradoras del país, más de 14 opciones en total, garantizando que no pierdas tus beneficios y encuentres la tarifa más económica del mercado. Si ya te llegó la carta o la llamada de renovación, no firmes ni pagues todavía. Toca el botón de abajo, déjanos los datos de tu vehículo y te mostramos en 2 minutos cuánto te puedes ahorrar este año."
+      },
+      {
+        id: "g5", type: "pauta", title: "5. Alerta Camioneros y Pesados", hook: "Enfoque: Reducción de tarifas en carga y vehículos pesados.",
+        text: "Buenas noticias para los camioneros y propietarios de vehículos pesados: el costo de los seguros para transporte pesado bajó y las opciones que tienes a tu disposición en este momento son las mejores del mercado. Si estás pagando un seguro demasiado costoso o se te avecina la renovación, este es el momento exacto para revisar. Cuando cotizas con una de nuestras gestoras en Segurautos, nos encargamos de comparar entre las mejores aseguradoras del país para hacer todo lo posible por mejorar el precio de tu seguro actual, entregándote exactamente las coberturas que necesitas para rodar y circular con total tranquilidad por todo el territorio nacional. No renueves ni asegures a ciegas pagando de más. Toca el botón de abajo, habla directamente con una de nuestras gestoras especializadas y descubre de inmediato cuánto te vas a ahorrar en la póliza de tu vehículo pesado."
+      },
+      {
+        id: "g6", type: "organico", title: "6. El Cobro por Daños en un Bache", hook: "Enfoque: Paso a paso legal ante daños por huecos con el IDU y 123.",
+        text: "Si vas manejando, caes en un hueco feo y se te rompe un rin, se te estalla una llanta o se te daña la suspensión, no te muevas del sitio ni te quedes solo con la rabia. Aunque muy pocos lo hacen, tú sí puedes hacer que la alcaldía o el Estado te paguen hasta el último peso del arreglo, pero debes seguir este paso a paso en los primeros 10 minutos. Lo primero es no mover el carro por nada del mundo. Saca el celular y tómale fotos y video al hueco donde se vea la profundidad, la falta de señalización y la dirección exacta. Lo segundo es fotografiar detalladamente el daño de tu carro ahí mismo. Lo tercero y más importante: llama de inmediato a la línea 123 y pide a la Policía de Tránsito para que levanten el croquis o informe oficial del accidente por mal estado de la vía, porque sin esa prueba reina no te van a responder. Y cuarto: con las fotos, la factura del taller y ese reporte oficial, radicas una reclamación formal a través de la plataforma Bogotá Te Escucha dirigida al IDU o a la Alcaldía Local si el hecho fue en una vía de barrio. Guarda este video, compártelo con quien maneje todos los días en la ciudad y cúrate en salud."
+      },
+      {
+        id: "g7", type: "organico", title: "7. ¿Por Qué Son Tan Caros los Parqueaderos?", hook: "Enfoque: Normativa de tarifas por minuto y responsabilidad obligatoria.",
+        text: "Me vine a probar uno de los parqueaderos más caros de Bogotá para ver cuánto nos cobran por dejar el carro solo un momento y entender si esto que hacen es legal o si nos están robando de frente. Para que te hagas una idea, dejar el carro aquí un par de horas te puede costar prácticamente lo mismo que un almuerzo o un día de trabajo. Pero la gran pregunta es: ¿es legal que cobren tanto? La respuesta es sí. En Bogotá, las tarifas no son un invento del dueño del parqueadero, están reguladas por decreto según la zona, si el parqueadero es subterráneo, en estructura o a nivel de piso, y el tipo de piso que tiene. Entre más transitada la zona y mejor la infraestructura, más alto es el tope legal por minuto. Pero ojo a esto para que te cures en salud: aunque te cobren una tarifa altísima, lo que jamás es legal es que se laven las manos con el letrero de 'no nos hacemos responsables por daños o robos'. Por ley, esa tarifa alta que estás pagando incluye obligatoriamente una custodia y una póliza que los obliga a responder por rayones, golpes o pérdidas dentro del establecimiento. Si vas a pagar caro por parquear, exige que te entreguen el recibo con la hora exacta, revisa la tarifa por minuto fijada a la vista y reporta cualquier novedad antes de sacar el carro del lugar. Guarda este video antes de salir este fin de semana y compártelo con el amigo que siempre reniega de los parqueaderos."
+      },
+      {
+        id: "g8", type: "organico", title: "8. La Trampa de las Aplicaciones", hook: "Enfoque: Asegurar como utilitario para evitar la negación de indemnizaciones.",
+        text: "Hace poco nos llegó el caso de un cliente que se estrelló de frente contra un poste de luz. Llamó al numeral de asistencia de la aseguradora, llegó la grúa, trasladaron el carro al taller y, por la gravedad de los daños, declararon la pérdida total. El vehículo estaba cotizado en unos 65 millones de pesos y él solo estaba a la espera del correo con el desembolso de la indemnización. Y el correo efectivamente le llegó, pero la respuesta no fue la que esperaba: la aseguradora le negó el pago total de la indemnización. ¿La razón? Identificaron que en el momento del accidente el carro estaba prestando servicio de transporte de pasajeros a través de aplicaciones. ¿Podía la aseguradora negarse a pagar? Lamentablemente sí. Si tu carro está asegurado bajo la modalidad de uso particular o familiar y lo utilizas con fines comerciales o de plataforma, ninguna aseguradora te va a responder ante un siniestro. Para que te cubra, el vehículo debe estar asegurado como utilitario o comercial. Y aquí viene el gran secreto que casi nadie sabe: ¿se puede asegurar un vehículo de placa particular como utilitario o de plataforma? La respuesta es sí, pero no con todas las compañías ni para todos los modelos. Esto depende de cómo se clasifique el riesgo al momento de cotizar y de contar con la asesoría correcta. Si hoy usas tu carro para trabajar en aplicaciones y sufres un choque grave o un hurto teniendo una póliza tradicional, estás corriendo el riesgo de perder todo tu patrimonio. Cúrate en salud, cotiza tu póliza de la forma correcta y asegúrate de estar cubierto de verdad. Escribe la palabra 'cotización' en los comentarios y te mostramos las opciones reales que sí se adaptan a tu vehículo."
+      },
+      {
+        id: "g9", type: "organico", title: "9. Bogotá en 'Obra Gris' Eterna", hook: "Enfoque: Paciencia y prevención en la infraestructura dilatada.",
+        text: "Bogotá va a durar por lo menos cinco o seis años más metida en una 'obra gris' eterna, y aunque a todos nos saca de quicio el trancón, hay que admitir algo que genera mucha polémica: este caos es el costo obligatorio para que la movilidad por fin mejore. El problema no es la promesa del metro o las nuevas troncales, sino el 'mientras tanto' y la forma en que algunas obras se han dilatado hasta desesperar a cualquiera. Lugares como la Avenida 68, el tramo de la Avenida Laureano Gómez en la 191 o las eternas intervenciones en la Calle 72 son el ejemplo perfecto de frentes de obra que parecen no avanzar nunca. Vivimos atrapados entre polisombras, desvíos improvisados y huecos tapados con tierra que no solo nos quitan horas de vida, sino que destruyen la suspensión, deforman las llantas y duplican el riesgo de cualquier choque simple. La ciudad se va a demorar bastante en cambiar, así que lo único que nos queda a los conductores para curarnos en salud es manejar con mucha más malicia, aumentar la distancia de frenado en zonas de construcción y no confiarse de las vías de noche. Paciencia, porque a esta 'obra gris' todavía le queda bastante recorrido."
+      },
+      {
+        id: "g10", type: "organico", title: "10. 3 Mitos de Manejar un Eléctrico", hook: "Enfoque: Cuidado de grúa, paso de corriente y lavado de capó.",
+        text: "Si tienes o estás pensando en comprar un carro eléctrico, hay tres secretos técnicos que tienes que saber para curarte en salud y no tirarte la garantía o el motor por puro desconocimiento. El primero es la grúa: un eléctrico jamás se debe remolcar arrastrado como un carro térmico normal. Al rodar las ruedas sin el sistema activo, los motores generan energía que no tiene a dónde ir y pueden sobrecalentar o fundir el sistema inversor. Siempre debe subirse completo sobre una grúa de planchón o rampa especial donde las cuatro ruedas queden totalmente inmóviles. El segundo punto son los famosos iniciadores: si te piden 'iniciar' o pasarle corriente a otro carro convencional que se quedó sin batería, no lo hagas. La batería de 12 voltios de un eléctrico está diseñada para gestionar la electrónica interna, no para soportar el pico de arranque de un motor a gasolina; intentar dar un 'iniciador' puede generar un pico de voltaje y achicharrar los módulos electrónicos de tu carro. Y el tercero es el lavado de la zona del capó: por costumbre, muchos llevan el carro al autolavado y dejan que le metan manguera a presión al compartimento delantero. Aunque vienen aislados, el agua a alta presión en los conectores de alto voltaje o sensores de corriente puede generar sulfatación, cortocircuitos o bloqueos por aislamiento. Cuidar un eléctrico es sencillo, pero requiere cambiar los chips de la conducción tradicional."
+      }
+    ];
+
+    let currentFilter = 'all';
+
+    function renderCards() {
+      const container = document.getElementById('mainBank');
+      container.innerHTML = '';
+      guiones.forEach(g => {
+        const card = createCardElement(g);
+        container.appendChild(card);
+      });
+    }
+
+    function createCardElement(g) {
+      const div = document.createElement('div');
+      div.id = g.id;
+      div.draggable = true;
+      div.ondragstart = (e) => drag(e);
+      div.className = `glass-card p-5 rounded-xl border transition cursor-grab active:cursor-grabbing relative group ${
+        g.type === 'pauta' ? 'card-pauta' : 'card-organico'
+      }`;
+
+      const badgeColor = g.type === 'pauta' ? 'bg-pauta/20 text-pauta border-pauta/30' : 'bg-organico/20 text-organico border-organico/30';
+      const labelText = g.type === 'pauta' ? 'PAUTA' : 'ORGÁNICO';
+
+      div.innerHTML = `
+        <div class="flex justify-between items-start mb-3">
+          <span class="px-2.5 py-0.5 rounded-md text-[10px] font-black tracking-wider uppercase border ${badgeColor}">${labelText}</span>
+          <button onclick="copyScriptText('${g.id}')" class="text-xs text-gray-400 hover:text-white p-1 rounded bg-black/40 hover:bg-black/60 border border-white/10" title="Copiar texto">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+        <h3 class="font-extrabold text-white text-base mb-2 group-hover:text-blue-400 transition-colors">${g.title}</h3>
+        <p class="text-xs text-gray-400 mb-4 line-clamp-2">${g.hook}</p>
+        <div class="flex justify-between items-center pt-3 border-t border-white/5 text-xs">
+          <button onclick="openModal('${g.id}')" class="text-blue-400 hover:underline font-bold flex items-center gap-1">
+            <i class="fa-solid fa-expand text-[10px]"></i> Leer Guion
+          </button>
+          <span class="text-[10px] text-gray-500"><i class="fa-solid fa-grip-dots-vertical"></i> Mover</span>
+        </div>
+      `;
+      return div;
+    }
+
+    function allowDrop(ev) { ev.preventDefault(); }
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+
+    function drop(ev, targetId) {
+      ev.preventDefault();
+      const data = ev.dataTransfer.getData("text");
+      const card = document.getElementById(data);
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        const placeholder = target.querySelector('p');
+        if (placeholder) placeholder.remove();
+        target.appendChild(card);
+        updateCounts();
+      }
+    }
+
+    function updateCounts() {
+      document.getElementById('count-sesion1').innerText = `${document.getElementById('sesion1').querySelectorAll('.glass-card').length} guiones`;
+      document.getElementById('count-sesion2').innerText = `${document.getElementById('sesion2').querySelectorAll('.glass-card').length} guiones`;
+    }
+
+    function openModal(id) {
+      const g = guiones.find(item => item.id === id);
+      if (!g) return;
+
+      const modalCategory = document.getElementById('modalCategory');
+      modalCategory.innerText = g.type === 'pauta' ? 'PAUTA' : 'ORGÁNICO';
+      modalCategory.className = `px-3 py-1 rounded-full text-xs font-bold uppercase ${
+        g.type === 'pauta' ? 'bg-pauta/20 text-pauta border border-pauta/30' : 'bg-organico/20 text-organico border border-organico/30'
+      }`;
+
+      document.getElementById('modalTitle').innerText = g.title;
+      document.getElementById('modalHook').innerText = g.hook;
+      document.getElementById('modalBody').innerText = g.text;
+      document.getElementById('scriptModal').classList.remove('hidden');
+      document.getElementById('scriptModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('scriptModal').classList.add('hidden');
+      document.getElementById('scriptModal').classList.remove('flex');
+    }
+
+    function copyModalText() {
+      const text = document.getElementById('modalBody').innerText;
+      navigator.clipboard.writeText(text);
+      alert('¡Guion copiado al portapapeles!');
+    }
+
+    function copyScriptText(id) {
+      const g = guiones.find(item => item.id === id);
+      if (g) {
+        navigator.clipboard.writeText(g.text);
+        alert(`¡Texto de "${g.title}" copiado!`);
+      }
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('[id^="btn-"]').forEach(btn => btn.className = btn.className.replace('bg-white/20', 'bg-white/5'));
+      document.getElementById(`btn-${filter}`).className += ' bg-white/20';
+      filterCards();
+    }
+
+    function filterCards() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      guiones.forEach(g => {
+        const card = document.getElementById(g.id);
+        if (!card) return;
+        const matchesSearch = g.title.toLowerCase().includes(query) || g.text.toLowerCase().includes(query) || g.hook.toLowerCase().includes(query);
+        const matchesFilter = currentFilter === 'all' || g.type === currentFilter;
+
+        if (matchesSearch && matchesFilter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCards);
+  </script>
 </body>
 </html>
